@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PUZZLE INSIGHT — 모바일 퍼즐 게임 시장 리서치 (2026)</title>
+<meta name="description" content="모바일 퍼즐 게임 시장 동향, 한국·미국·일본 국가별 순위, 장르별 대표작 리서치 리포트">
+<style>
+  :root{
+    --paper:#F5F6F8;
+    --surface:#FFFFFF;
+    --ink:#161B26;
+    --ink-2:#3D4454;
+    --muted:#68707F;
+    --line:#DDE1E8;
+    --accent:#2B50C7;
+    --accent-soft:#E4EAFB;
+    --amber:#9A5B00;
+    --amber-soft:#F6ECDB;
+    --bar-1:#2B50C7;
+    --bar-2:#5B7BDA;
+    --bar-3:#8CA3E8;
+    --bar-4:#BCC9F1;
+    --good:#1B7A4B;
+    --tile-a:#2B50C7; --tile-b:#D97706; --tile-c:#1B7A4B; --tile-d:#B91C1C; --tile-e:#7C3AED;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#0F1219;
+      --surface:#171C27;
+      --ink:#E9EBF1;
+      --ink-2:#C3C9D6;
+      --muted:#8B93A5;
+      --line:#2A3140;
+      --accent:#7C98EE;
+      --accent-soft:#1E2946;
+      --amber:#E3A551;
+      --amber-soft:#33270F;
+      --bar-1:#6D8BE8;
+      --bar-2:#5570C4;
+      --bar-3:#3E549A;
+      --bar-4:#2B3B6E;
+      --good:#4CBF87;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0F1219; --surface:#171C27; --ink:#E9EBF1; --ink-2:#C3C9D6; --muted:#8B93A5;
+    --line:#2A3140; --accent:#7C98EE; --accent-soft:#1E2946; --amber:#E3A551; --amber-soft:#33270F;
+    --bar-1:#6D8BE8; --bar-2:#5570C4; --bar-3:#3E549A; --bar-4:#2B3B6E; --good:#4CBF87;
+  }
+  :root[data-theme="light"]{
+    --paper:#F5F6F8; --surface:#FFFFFF; --ink:#161B26; --ink-2:#3D4454; --muted:#68707F;
+    --line:#DDE1E8; --accent:#2B50C7; --accent-soft:#E4EAFB; --amber:#9A5B00; --amber-soft:#F6ECDB;
+    --bar-1:#2B50C7; --bar-2:#5B7BDA; --bar-3:#8CA3E8; --bar-4:#BCC9F1; --good:#1B7A4B;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", "Segoe UI", sans-serif;
+    line-height:1.7;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover, a:focus-visible{ text-decoration:underline; }
+  a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
+
+  .wrap{ max-width:1020px; margin:0 auto; padding:0 24px; }
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    border-bottom:1px solid var(--line);
+    background:var(--surface);
+  }
+  .mast-top{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 0; border-bottom:1px solid var(--line);
+    font-size:12px; color:var(--muted); letter-spacing:.08em;
+  }
+  .brand{ font-weight:800; font-size:15px; letter-spacing:.14em; color:var(--ink); }
+  .brand em{ font-style:normal; color:var(--accent); }
+  .hero{ padding:56px 0 40px; display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center; }
+  .hero h1{
+    font-size:clamp(28px, 4.4vw, 44px); font-weight:800; line-height:1.25;
+    letter-spacing:-.02em; text-wrap:balance;
+  }
+  .hero .lede{ margin-top:18px; max-width:620px; color:var(--ink-2); font-size:17px; }
+  .eyebrow{
+    display:inline-block; font-size:12px; font-weight:700; letter-spacing:.16em;
+    color:var(--amber); text-transform:uppercase; margin-bottom:14px;
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:8px 24px; margin-top:22px;
+    font-size:13px; color:var(--muted);
+  }
+  .meta-row b{ color:var(--ink-2); font-weight:600; }
+  /* decorative block-puzzle motif */
+  .motif{ display:grid; grid-template-columns:repeat(4, 26px); grid-auto-rows:26px; gap:5px; }
+  .motif i{ border-radius:5px; opacity:.92; }
+  .m-a{ background:var(--tile-a);} .m-b{ background:var(--tile-b);} .m-c{ background:var(--tile-c);}
+  .m-d{ background:var(--tile-d);} .m-e{ background:var(--tile-e);} .m-x{ background:var(--line); opacity:.55;}
+  @media (max-width:720px){ .hero{ grid-template-columns:1fr; } .motif{ display:none; } }
+
+  /* ---------- TOC ---------- */
+  .toc{
+    display:flex; flex-wrap:wrap; gap:4px 22px; padding:12px 0;
+    font-size:13.5px; font-weight:600;
+  }
+  .toc a{ color:var(--ink-2); }
+  .toc a span{ color:var(--accent); font-variant-numeric:tabular-nums; margin-right:6px; }
+
+  /* ---------- Sections ---------- */
+  main{ padding:16px 0 40px; }
+  section{ padding:44px 0 8px; border-bottom:1px solid var(--line); margin-bottom:16px; }
+  section:last-of-type{ border-bottom:none; }
+  .sec-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:8px; }
+  .sec-num{
+    font-size:13px; font-weight:800; color:var(--accent);
+    font-variant-numeric:tabular-nums; letter-spacing:.06em;
+  }
+  h2{ font-size:clamp(21px, 2.6vw, 27px); font-weight:800; letter-spacing:-.01em; text-wrap:balance; }
+  h3{ font-size:17px; font-weight:700; margin:28px 0 10px; }
+  p{ margin:12px 0; color:var(--ink-2); max-width:74ch; }
+  p.note{ font-size:13px; color:var(--muted); }
+  strong{ color:var(--ink); }
+  ul.plain{ margin:10px 0 10px 2px; list-style:none; }
+  ul.plain li{ padding-left:18px; position:relative; margin:7px 0; color:var(--ink-2); }
+  ul.plain li::before{ content:""; position:absolute; left:0; top:.72em; width:8px; height:8px; border-radius:2px; background:var(--accent); }
+
+  /* ---------- Stat tiles ---------- */
+  .tiles{ display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin:26px 0 8px; }
+  @media (max-width:720px){ .tiles{ grid-template-columns:1fr; } }
+  .tile{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:20px 22px;
+  }
+  .tile .k{ font-size:12px; font-weight:700; letter-spacing:.1em; color:var(--muted); text-transform:uppercase; }
+  .tile .v{ font-size:32px; font-weight:800; letter-spacing:-.02em; margin:6px 0 2px; font-variant-numeric:tabular-nums; }
+  .tile .d{ font-size:13px; color:var(--muted); }
+  .tile .up{ color:var(--good); font-weight:700; }
+
+  /* ---------- Figures / charts ---------- */
+  figure.chart{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:24px 26px 18px; margin:26px 0;
+  }
+  figure.chart figcaption{ margin-bottom:18px; }
+  figure.chart .fig-title{ font-size:15px; font-weight:700; color:var(--ink); }
+  figure.chart .fig-sub{ font-size:12.5px; color:var(--muted); margin-top:2px; }
+  .hbar-row{ display:grid; grid-template-columns:150px 1fr 84px; align-items:center; gap:12px; margin:11px 0; }
+  @media (max-width:600px){ .hbar-row{ grid-template-columns:110px 1fr 74px; } }
+  .hbar-label{ font-size:13.5px; font-weight:600; color:var(--ink-2); text-align:right; line-height:1.3; }
+  .hbar-track{ background:transparent; }
+  .hbar-fill{ height:20px; border-radius:0 4px 4px 0; background:var(--bar-2); min-width:3px; }
+  .hbar-fill.lead{ background:var(--bar-1); }
+  .hbar-val{ font-size:13px; font-weight:700; font-variant-numeric:tabular-nums; color:var(--ink); }
+  .fig-src{ margin-top:14px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:10px; }
+
+  /* share bar */
+  .share-bar{ display:flex; height:34px; border-radius:6px; overflow:hidden; margin:6px 0 14px; }
+  .share-bar div{ height:100%; }
+  .share-bar div + div{ border-left:2px solid var(--surface); }
+  .legend{ display:flex; flex-wrap:wrap; gap:8px 20px; font-size:13px; color:var(--ink-2); }
+  .legend i{ display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:7px; }
+
+  /* ---------- Tables ---------- */
+  .tbl-scroll{ overflow-x:auto; margin:18px 0 6px; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
+  table{ border-collapse:collapse; width:100%; min-width:640px; font-size:14px; }
+  caption{ text-align:left; padding:16px 18px 4px; font-weight:700; font-size:15px; color:var(--ink); }
+  th{
+    text-align:left; font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); font-weight:700; padding:12px 18px; border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  td{ padding:12px 18px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-2); }
+  tr:last-child td{ border-bottom:none; }
+  td.num{ font-variant-numeric:tabular-nums; font-weight:700; color:var(--ink); white-space:nowrap; }
+  .src{ font-size:12px; color:var(--muted); white-space:nowrap; }
+
+  .country-flag{
+    display:inline-flex; align-items:center; gap:10px; margin:30px 0 4px;
+    font-size:18px; font-weight:800;
+  }
+  .country-flag .tag{
+    font-size:11px; font-weight:700; letter-spacing:.1em; color:var(--accent);
+    background:var(--accent-soft); border-radius:4px; padding:3px 9px;
+  }
+
+  /* ---------- Genre cards ---------- */
+  .genres{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:24px 0; }
+  @media (max-width:760px){ .genres{ grid-template-columns:1fr; } }
+  .gcard{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:20px 22px;
+  }
+  .gcard h4{ font-size:16px; font-weight:800; display:flex; align-items:center; gap:10px; }
+  .gcard h4 i{ width:12px; height:12px; border-radius:3px; flex:none; }
+  .gcard .en{ font-size:12px; color:var(--muted); font-weight:600; letter-spacing:.05em; margin-left:2px; }
+  .gcard p{ font-size:13.5px; margin:9px 0 11px; color:var(--ink-2); }
+  .chips{ display:flex; flex-wrap:wrap; gap:6px; }
+  .chip{
+    font-size:12.5px; font-weight:600; color:var(--ink-2);
+    border:1px solid var(--line); border-radius:100px; padding:3px 11px; background:var(--paper);
+  }
+
+  /* callout */
+  .callout{
+    border-left:3px solid var(--amber); background:var(--amber-soft);
+    border-radius:0 8px 8px 0; padding:14px 18px; margin:20px 0; font-size:14px; color:var(--ink-2);
+    max-width:78ch;
+  }
+  .callout b{ color:var(--amber); }
+
+  /* ---------- Sources / footer ---------- */
+  ol.sources{ margin:14px 0 10px 20px; font-size:13.5px; color:var(--ink-2); }
+  ol.sources li{ margin:7px 0; }
+  footer{
+    border-top:1px solid var(--line); background:var(--surface);
+    padding:26px 0 40px; font-size:12.5px; color:var(--muted);
+  }
+  footer p{ font-size:12.5px; color:var(--muted); max-width:none; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="mast-top">
+      <span class="brand">PUZZLE<em>·</em>INSIGHT</span>
+      <span>MOBILE GAME MARKET RESEARCH — INTERNAL</span>
+    </div>
+    <div class="hero">
+      <div>
+        <span class="eyebrow">Market Research Report · Vol.1</span>
+        <h1>모바일 퍼즐 게임 시장 리서치<br>동향 · 국가별 순위 · 장르 지형도</h1>
+        <p class="lede">
+          퍼즐은 다운로드와 매출 양면에서 모바일 게임 산업의 핵심 장르로 자리잡았다.
+          본 리포트는 Sensor Tower, AppMagic 등 공개된 시장 데이터를 기반으로
+          최신 시장 동향과 한국·미국·일본 3개국의 순위 지형, 그리고 장르별 대표작을 정리한다.
+        </p>
+        <div class="meta-row">
+          <span><b>작성일</b> 2026. 08. 03</span>
+          <span><b>커버리지</b> 글로벌 · 한국 · 미국 · 일본</span>
+          <span><b>데이터 출처</b> Sensor Tower · AppMagic 외 (본문 명기)</span>
+        </div>
+      </div>
+      <div class="motif" aria-hidden="true">
+        <i class="m-a"></i><i class="m-a"></i><i class="m-x"></i><i class="m-b"></i>
+        <i class="m-a"></i><i class="m-x"></i><i class="m-b"></i><i class="m-b"></i>
+        <i class="m-c"></i><i class="m-c"></i><i class="m-e"></i><i class="m-x"></i>
+        <i class="m-c"></i><i class="m-d"></i><i class="m-e"></i><i class="m-e"></i>
+        <i class="m-d"></i><i class="m-d"></i><i class="m-x"></i><i class="m-e"></i>
+      </div>
+    </div>
+    <nav class="toc" aria-label="목차">
+      <a href="#summary"><span>01</span>핵심 요약</a>
+      <a href="#trend"><span>02</span>시장 동향</a>
+      <a href="#country"><span>03</span>국가별 순위 (한·미·일)</a>
+      <a href="#genre"><span>04</span>장르 및 대표작</a>
+      <a href="#sources"><span>05</span>출처 및 방법론</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= 01 SUMMARY ================= -->
+  <section id="summary">
+    <div class="sec-head"><span class="sec-num">01</span><h2>핵심 요약 — Executive Summary</h2></div>
+    <div class="tiles">
+      <div class="tile">
+        <div class="k">2025 퍼즐 IAP 매출</div>
+        <div class="v">$100억+</div>
+        <div class="d"><span class="up">▲ 전년 대비 +14%</span> · 전략에 이어 매출 2위 장르 <span class="src">(Sensor Tower)</span></div>
+      </div>
+      <div class="tile">
+        <div class="k">2025 퍼즐 다운로드</div>
+        <div class="v">97억 회+</div>
+        <div class="d">전년 대비 약 −3%, 최다 다운로드 장르군 유지 <span class="src">(Sensor Tower)</span></div>
+      </div>
+      <div class="tile">
+        <div class="k">2026 상반기 퍼즐 매출</div>
+        <div class="v">$49억</div>
+        <div class="d">캐주얼 게임 매출의 44% 이상 점유 <span class="src">(AppMagic)</span></div>
+      </div>
+    </div>
+    <ul class="plain">
+      <li><strong>매출은 매치3, 다운로드는 블록 퍼즐</strong>이 견인하는 이원 구조가 뚜렷하다. Royal Match(2025년 IAP 약 $14억)와 Candy Crush Saga(약 $11억)가 매출 상위를 지키는 가운데, Block Blast!는 2025년 전 세계 <strong>전체 게임 다운로드 1위</strong>(약 3억 5,600만 건, AppMagic 집계)를 기록했다.</li>
+      <li>2026년 들어 <strong>화살표 정렬(Arrow) 퍼즐</strong>이 급부상했다. 2026년 6월 Sensor Tower 집계에서 Arrows – Puzzle Escape가 글로벌 다운로드 1위에 올랐고, 유사 타이틀이 다운로드 상위권에 다수 진입했다.</li>
+      <li>신규 진입 장벽은 매우 높다. AppMagic에 따르면 2026년 상반기 출시된 신작 매치3 중 월 매출 $10만을 한 번이라도 달성한 비율은 <strong>0.8%</strong>(약 120개 중 1개)에 그쳤다.</li>
+      <li>한·미·일 3국의 지형은 상이하다. 미국은 다운로드·매출 모두 퍼즐 강세, 한국은 다운로드 상위를 캐주얼 퍼즐이 점령하되 매출은 MMORPG 중심, 일본은 Puzzle &amp; Dragons 등 자국 퍼즐 RPG가 매출 상위권을 유지한다.</li>
+    </ul>
+  </section>
+
+  <!-- ================= 02 TREND ================= -->
+  <section id="trend">
+    <div class="sec-head"><span class="sec-num">02</span><h2>시장 동향 — 2025년 결산과 2026년 상반기</h2></div>
+
+    <h3>장르 전체: 모바일 게임의 매출 2위, 다운로드 최상위 장르</h3>
+    <p>
+      Sensor Tower의 모바일 게임 시장 결산에 따르면 퍼즐 장르는 2025년 <strong>인앱결제(IAP) 매출 $100억 이상</strong>을
+      기록하며 전년 대비 14% 성장, 전략(Strategy)에 이어 두 번째로 높은 매출을 올린 장르가 됐다.
+      다운로드는 같은 해 97억 건을 넘겨 최상위권을 유지했으나 전년 대비 약 3% 감소해,
+      &lsquo;설치는 정체, 결제는 성장&rsquo;이라는 성숙기 시장의 전형적 패턴을 보였다.
+    </p>
+    <p>
+      AppMagic의 캐주얼 게임 리포트는 2026년 상반기 퍼즐 게임의 순매출(net revenue)을 <strong>$49억</strong>으로 집계했다.
+      이는 캐주얼 게임 전체 매출의 44% 이상에 해당하는 규모다.
+    </p>
+
+    <figure class="chart">
+      <figcaption>
+        <div class="fig-title">2026년 상반기 퍼즐 게임 순매출 구성 (총 $49억)</div>
+        <div class="fig-sub">단위: 십억 달러(USD B) · 넷 매출 기준</div>
+      </figcaption>
+      <div class="share-bar" role="img" aria-label="매치3 25억 달러 51%, 하이브리드 캐주얼 퍼즐 약 6억 달러 12%, 기타 퍼즐 약 18억 달러 37%">
+        <div style="width:51%; background:var(--bar-1);"></div>
+        <div style="width:12%; background:var(--bar-2);"></div>
+        <div style="width:37%; background:var(--bar-4);"></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--bar-1)"></i>매치3 — $2.5B (51%)</span>
+        <span><i style="background:var(--bar-2)"></i>하이브리드 캐주얼 퍼즐 — 약 $0.6B (12%)</span>
+        <span><i style="background:var(--bar-4)"></i>기타 퍼즐 하위 장르 — 약 $1.8B (37%, 잔여 산출)</span>
+      </div>
+      <div class="fig-src">출처: AppMagic Casual Games Report H1 2026 (PocketGamer.biz 보도 기준). &lsquo;기타&rsquo;는 총액에서 명시된 두 항목을 뺀 잔여값.</div>
+    </figure>
+
+    <h3>하위 장르별 온도차: 매치3 정체, 정렬·머지 급성장</h3>
+    <ul class="plain">
+      <li><strong>매치3</strong> — 상반기 매출 $25억으로 여전히 최대 하위 장르이나 전년 대비 소폭(1% 미만) 감소. 반면 다운로드는 10% 성장해 저변은 오히려 확대됐다.</li>
+      <li><strong>머지(Merge)</strong> — 전년 대비 74% 성장하며 가장 빠른 성장세를 보인 하위 장르로 집계됐다. Gossip Harbor(Microfun)는 2025년 한 해 $6.5억 이상을 벌어들이며 Gardenscapes(약 $5억)를 제치고 퍼즐 매출 3위에 올랐다.</li>
+      <li><strong>정렬(Sort) 퍼즐</strong> — 매출이 전년 대비 3배 이상으로 급증. 나사 정렬(Screw Sort)·색상 정렬 류가 성장을 주도했다.</li>
+      <li><strong>블록 퍼즐</strong> — 2026년 상반기 신규 출시작이 2,000종을 넘어서며 전년 대비 89% 증가. Block Blast!의 성공 이후 공급 과잉에 가까운 경쟁이 벌어지고 있다.</li>
+    </ul>
+
+    <figure class="chart">
+      <figcaption>
+        <div class="fig-title">2025년 글로벌 퍼즐 게임 IAP 매출 상위</div>
+        <div class="fig-sub">단위: 억 달러(USD 100M) · 연간 인앱결제 매출</div>
+      </figcaption>
+      <div class="hbar-row">
+        <div class="hbar-label">Royal Match<br><span class="src">Dream Games</span></div>
+        <div class="hbar-track"><div class="hbar-fill lead" style="width:100%"></div></div>
+        <div class="hbar-val">$14.0억+</div>
+      </div>
+      <div class="hbar-row">
+        <div class="hbar-label">Candy Crush Saga<br><span class="src">King</span></div>
+        <div class="hbar-track"><div class="hbar-fill" style="width:79%"></div></div>
+        <div class="hbar-val">$11.0억+</div>
+      </div>
+      <div class="hbar-row">
+        <div class="hbar-label">Gossip Harbor<br><span class="src">Microfun</span></div>
+        <div class="hbar-track"><div class="hbar-fill" style="width:46%"></div></div>
+        <div class="hbar-val">$6.5억+</div>
+      </div>
+      <div class="hbar-row">
+        <div class="hbar-label">Gardenscapes<br><span class="src">Playrix</span></div>
+        <div class="hbar-track"><div class="hbar-fill" style="width:36%"></div></div>
+        <div class="hbar-val">$5.0억+</div>
+      </div>
+      <div class="fig-src">출처: Sensor Tower(State of Mobile Gaming), AppMagic 연간 집계 보도 종합. 막대 길이는 하한값 기준 상대 비율.</div>
+    </figure>
+
+    <h3>2026년의 세 가지 신호</h3>
+    <p>
+      <strong>① Royal Kingdom의 추격.</strong> Dream Games의 차기작 Royal Kingdom은 매치3 상위 10개 중
+      가장 높은 성장률(+188%)을 기록 중이며, 업계에서는 Candy Crush Saga 추월 가능성이 거론된다(전망치).
+      Royal Match 자체도 2026년 들어 거의 매달 $1억 이상을 벌어들이며 2026년 6월 기준 글로벌 전체 게임
+      매출 2위를 유지했다.
+    </p>
+    <p>
+      <strong>② Block Blast!의 다운로드 장기 집권.</strong> Hungry Studio의 Block Blast!는 2025년 연간
+      전 세계 전체 게임 다운로드 1위(AppMagic 기준 약 3억 5,620만 건)에 이어 2026년 1분기에도
+      1·2·3월 연속 월간 다운로드 1위를 지켰다. 개발사 발표 기준 DAU 7,000만, MAU 3억 명 규모다.
+    </p>
+    <p>
+      <strong>③ 화살표(Arrow) 퍼즐의 급부상.</strong> 2026년 6월 Sensor Tower 월간 집계에서
+      Arrows – Puzzle Escape가 글로벌 다운로드 1위에 올랐고, Arrows GO! 등 동일 계열 타이틀이
+      다운로드 TOP 10에 동반 진입했다. 하이브리드 캐주얼 퍼즐 전반은 상반기 약 $6억 매출을 기록했으며,
+      Rollic Games(Zynga 산하)는 Screwdom(누적 $2,700만+), Color Block Jam 등 다수의 흥행작을 배출했다.
+    </p>
+
+    <div class="callout">
+      <b>진입 장벽 경고.</b> AppMagic 집계 기준, 2026년 상반기 출시된 신작 매치3 게임 중
+      월 매출 $10만 달성 경험 비율은 0.8%에 불과하다. 검증된 IP·라이브옵스 역량 없이
+      매치3 정면 승부는 사실상 성립하지 않는 시장이다.
+    </div>
+  </section>
+
+  <!-- ================= 03 COUNTRY ================= -->
+  <section id="country">
+    <div class="sec-head"><span class="sec-num">03</span><h2>국가별 순위 지형 — 한국 · 미국 · 일본</h2></div>
+    <p class="note">
+      ※ 구글 플레이·애플 앱스토어의 스토어 순위는 일 단위로 변동하므로, 본 절은 특정일 스냅숏 대신
+      Sensor Tower·AppMagic 등 제3자 데이터 기업의 기간 집계(연간·분기·월간)를 기준으로 각국의 구조적 지형을 기술한다.
+      각 항목에 집계 기간과 출처를 병기했다.
+    </p>
+
+    <div class="country-flag">🇰🇷 한국 <span class="tag">세계 4위 시장</span></div>
+    <p>
+      한국 모바일 게임 시장은 2025년 약 <strong>$53억</strong> 규모로 중국·일본·미국에 이은 세계 4위다.
+      매출 상위는 MMORPG·전략 등 하드코어 장르가 장악하고, 다운로드 상위는 캐주얼 퍼즐·정렬 게임이
+      점령하는 <strong>이중 구조</strong>가 가장 뚜렷한 시장이다.
+    </p>
+    <div class="tbl-scroll">
+      <table>
+        <caption>한국 시장 주요 지표</caption>
+        <thead><tr><th>구분</th><th>내용</th><th>집계 기간 · 출처</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="num">다운로드 1위</td>
+            <td>Block Blast! (Hungry Studio) — 2026년 한국 다운로드 차트 1위. 2위는 고스톱 M. 다운로드 상위권 대부분이 캐주얼 퍼즐·매칭·정렬 게임</td>
+            <td class="src">2026 · AppMagic/Udonis</td>
+          </tr>
+          <tr>
+            <td class="num">매출 상위</td>
+            <td>메이플스토리: 아이들 RPG(Nexon) 등 RPG·전략 중심. 퍼즐은 매출 최상위권에는 부재하나, 다운로드-매출 양쪽 차트에 동시 진입한 타이틀은 드묾</td>
+            <td class="src">2026 · AppMagic/Udonis</td>
+          </tr>
+          <tr>
+            <td class="num">시장 규모</td>
+            <td>2025년 약 $53억 (인구 5,100만 대비 세계 최상위 수준의 1인당 지출)</td>
+            <td class="src">2025 연간 · Udonis/MAF</td>
+          </tr>
+          <tr>
+            <td class="num">결제 성향</td>
+            <td>일본·중국과 함께 IAP(인앱결제) 중심 수익화가 지배적인 시장으로 분류</td>
+            <td class="src">2026 · AppMagic H1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="country-flag">🇺🇸 미국 <span class="tag">퍼즐 최대 매출 시장</span></div>
+    <p>
+      미국은 다운로드와 매출 모두에서 퍼즐 장르가 가장 강한 시장이다. 서구권 매치3 상위작 매출의
+      상당 부분이 미국에서 발생하며, 다운로드 차트 역시 퍼즐이 최상단을 차지한다.
+    </p>
+    <div class="tbl-scroll">
+      <table>
+        <caption>미국 시장 주요 지표</caption>
+        <thead><tr><th>구분</th><th>내용</th><th>집계 기간 · 출처</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="num">다운로드 1위</td>
+            <td>Block Blast! — 2025년 미국 전체 게임 다운로드 1위. 2위 Roblox보다 1,000만 건 이상 많았고, 퍼즐 내 2위인 Candy Crush Saga의 3배 이상</td>
+            <td class="src">2025 연간 · AppMagic</td>
+          </tr>
+          <tr>
+            <td class="num">퍼즐 매출 1위</td>
+            <td>Royal Match — 2025년 글로벌 퍼즐 매출 1위($14억+)의 최대 시장이 미국. 2025년 2분기 미국 주간 매출 최고 약 $1,590만 기록</td>
+            <td class="src">2025 Q2 · Sensor Tower</td>
+          </tr>
+          <tr>
+            <td class="num">양대 마켓 공통</td>
+            <td>Candy Crush Saga, Gardenscapes, Gossip Harbor 등 매치3·머지 상위작이 iOS·구글 플레이 매출 상위권에 상시 포진</td>
+            <td class="src">2025–2026 · Sensor Tower</td>
+          </tr>
+          <tr>
+            <td class="num">2026 트렌드</td>
+            <td>Arrows – Puzzle Escape 등 화살표 퍼즐과 블록 퍼즐이 무료(다운로드) 차트 최상단을 주도</td>
+            <td class="src">2026.6 · Sensor Tower</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="country-flag">🇯🇵 일본 <span class="tag">퍼즐 RPG의 본고장</span></div>
+    <p>
+      일본은 자국산 장수 타이틀이 매출 차트를 지배하는 독자적 시장이다. 매치3에 RPG 수집·육성을 결합한
+      <strong>퍼즐 RPG</strong>라는 하위 장르가 이 시장에서 탄생했고, 10년 이상 매출 상위권을 유지하고 있다.
+    </p>
+    <div class="tbl-scroll">
+      <table>
+        <caption>일본 시장 주요 지표</caption>
+        <thead><tr><th>구분</th><th>내용</th><th>집계 기간 · 출처</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="num">퍼즐 매출 간판</td>
+            <td>Puzzle &amp; Dragons(GungHo, 2012) — 2026년 일본 전체 게임 매출 TOP 5 재진입. 드래곤볼·원피스·귀멸의 칼날 등 대형 IP 컬래버로 연간 수억 달러 매출 유지</td>
+            <td class="src">2026 · Udonis/AppMagic</td>
+          </tr>
+          <tr>
+            <td class="num">장수 캐주얼</td>
+            <td>LINE: Disney Tsum Tsum(2014) — 누적 매출 $18억 이상의 일본 대표 캐주얼 퍼즐</td>
+            <td class="src">누적 · Udonis</td>
+          </tr>
+          <tr>
+            <td class="num">다운로드 지형</td>
+            <td>Block Blast!, Color Block Jam, Screw Sort 3D 등 글로벌 캐주얼 퍼즐이 다운로드 상위권을 차지하나, 매출 상위권 진입은 드묾 — 매출은 자국 IP 중심</td>
+            <td class="src">2026 · Udonis/AppMagic</td>
+          </tr>
+          <tr>
+            <td class="num">결제 성향</td>
+            <td>IAP 중심 수익화가 가장 강한 시장군. 소수 헤비 스펜더(고래) 의존도가 높은 가챠 결합형 구조</td>
+            <td class="src">2026 · AppMagic H1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>3국 비교 요점.</b> 다운로드 차트는 세 나라 모두 Block Blast! 등 글로벌 캐주얼 퍼즐이 상위를 차지해 수렴하는 반면,
+      매출 차트는 미국(매치3 정상 결제) · 한국(MMORPG 우위, 퍼즐은 볼륨 장르) · 일본(자국 퍼즐 RPG·가챠)으로
+      뚜렷하게 갈린다. 진출 전략 수립 시 다운로드가 아닌 <b>매출 차트 기준</b>으로 시장을 읽어야 하는 이유다.
+    </div>
+  </section>
+
+  <!-- ================= 04 GENRE ================= -->
+  <section id="genre">
+    <div class="sec-head"><span class="sec-num">04</span><h2>퍼즐 게임의 장르 분류와 대표작</h2></div>
+    <p>
+      &lsquo;퍼즐&rsquo;은 단일 장르가 아니라 다수의 하위 장르 묶음이다. 아래 분류는 Sensor Tower·AppMagic의
+      장르 택소노미와 업계 통용 구분을 기준으로 하며, 대표작은 각 하위 장르에서 상업적·역사적으로
+      검증된 타이틀을 선정했다.
+    </p>
+    <div class="genres">
+      <div class="gcard">
+        <h4><i style="background:var(--tile-a)"></i>매치3 <span class="en">MATCH-3</span></h4>
+        <p>같은 색 타일 3개 이상을 맞춰 제거하는 퍼즐의 최대 하위 장르. 레벨 기반 진행에 라이브옵스·이벤트를 결합해 장르 매출의 절반을 차지한다.</p>
+        <div class="chips">
+          <span class="chip">Candy Crush Saga (King, 2012)</span>
+          <span class="chip">Royal Match (Dream Games, 2021)</span>
+          <span class="chip">Royal Kingdom (Dream Games)</span>
+          <span class="chip">Gardenscapes (Playrix)</span>
+        </div>
+      </div>
+      <div class="gcard">
+        <h4><i style="background:var(--tile-b)"></i>블록 퍼즐 <span class="en">BLOCK PUZZLE</span></h4>
+        <p>블록을 격자에 배치해 줄을 지우는 테트리스 계열. 짧은 세션·광고 수익화 중심으로, 현재 글로벌 다운로드를 견인하는 하위 장르다.</p>
+        <div class="chips">
+          <span class="chip">Block Blast! (Hungry Studio)</span>
+          <span class="chip">Tetris (1984~)</span>
+          <span class="chip">Woodoku (Tripledot)</span>
+        </div>
+      </div>
+      <div class="gcard">
+        <h4><i style="background:var(--tile-c)"></i>머지 <span class="en">MERGE</span></h4>
+        <p>같은 아이템 2~3개를 합쳐 상위 아이템을 만드는 보드 퍼즐. 스토리·경영 메타와 결합해 2026년 상반기 최고 성장률(+74%)을 기록했다.</p>
+        <div class="chips">
+          <span class="chip">Gossip Harbor (Microfun)</span>
+          <span class="chip">Merge Mansion (Metacore)</span>
+          <span class="chip">Travel Town (Magmatic)</span>
+        </div>
+      </div>
+      <div class="gcard">
+        <h4><i style="background:var(--tile-d)"></i>정렬 퍼즐 <span class="en">SORT PUZZLE</span></h4>
+        <p>색·형태 기준으로 오브젝트를 분류·정렬하는 퍼즐. 물 정렬에서 나사 정렬로 진화하며 2026년 상반기 매출이 전년 대비 3배 이상 성장했다.</p>
+        <div class="chips">
+          <span class="chip">Water Sort Puzzle (IEC)</span>
+          <span class="chip">Screwdom (Rollic)</span>
+          <span class="chip">Screw Sort 3D</span>
+        </div>
+      </div>
+      <div class="gcard">
+        <h4><i style="background:var(--tile-e)"></i>탈출·언블록 <span class="en">JAM / UNBLOCK</span></h4>
+        <p>막힌 보드에서 블록·화살표·차량을 빼내는 공간 추론 퍼즐. 2026년 다운로드 차트를 뒤흔든 화살표(Arrow) 퍼즐이 이 계열이다.</p>
+        <div class="chips">
+          <span class="chip">Arrows – Puzzle Escape</span>
+          <span class="chip">Color Block Jam (Rollic)</span>
+          <span class="chip">Unblock Me (Kiragames)</span>
+        </div>
+      </div>
+      <div class="gcard">
+        <h4><i style="background:var(--tile-a)"></i>3D 매치 <span class="en">TRIPLE MATCH 3D</span></h4>
+        <p>3D 오브젝트 더미에서 같은 물건 3개를 골라내는 매칭 퍼즐. 2022년 이후 급성장해 매치3의 대안 장르로 자리잡았다.</p>
+        <div class="chips">
+          <span class="chip">Match Factory! (Peak)</span>
+          <span class="chip">Triple Match 3D (Boombit)</span>
+        </div>
+      </div>
+      <div class="gcard">
+        <h4><i style="background:var(--tile-b)"></i>워드 퍼즐 <span class="en">WORD</span></h4>
+        <p>단어 조합·추리 퍼즐. 영어권 중심으로 안정적 수요를 유지하며, Wordle 인수 이후 NYT Games가 구독 모델의 성공 사례를 만들었다.</p>
+        <div class="chips">
+          <span class="chip">Wordscapes (PeopleFun)</span>
+          <span class="chip">Wordle (The New York Times)</span>
+          <span class="chip">Words With Friends (Zynga)</span>
+        </div>
+      </div>
+      <div class="gcard">
+        <h4><i style="background:var(--tile-c)"></i>넘버·로직 <span class="en">NUMBER / LOGIC</span></h4>
+        <p>스도쿠·2048 등 숫자·논리 기반 퍼즐. 제작비가 낮고 수명이 길어 광고 기반 캐주얼 포트폴리오의 기본 축을 담당한다.</p>
+        <div class="chips">
+          <span class="chip">Sudoku.com (Easybrain)</span>
+          <span class="chip">2048 (2014~)</span>
+          <span class="chip">Nonogram.com (Easybrain)</span>
+        </div>
+      </div>
+      <div class="gcard">
+        <h4><i style="background:var(--tile-d)"></i>퍼즐 RPG <span class="en">PUZZLE RPG</span></h4>
+        <p>매치 퍼즐에 캐릭터 수집·육성(가챠)을 결합한 일본 발(發) 하이브리드. 10년 이상 일본 매출 최상위권을 유지하는 장수 장르다.</p>
+        <div class="chips">
+          <span class="chip">Puzzle &amp; Dragons (GungHo, 2012)</span>
+          <span class="chip">Empires &amp; Puzzles (Small Giant)</span>
+          <span class="chip">Puzzle Quest 시리즈</span>
+        </div>
+      </div>
+      <div class="gcard">
+        <h4><i style="background:var(--tile-e)"></i>프리미엄·아트 퍼즐 <span class="en">PREMIUM / INDIE</span></h4>
+        <p>유료 판매 기반의 고품질 단편 퍼즐. 매출 규모는 작지만 애플 디자인 어워드 등 플랫폼 프로모션과 브랜드 가치 측면에서 영향력이 크다.</p>
+        <div class="chips">
+          <span class="chip">Monument Valley (ustwo)</span>
+          <span class="chip">The Room 시리즈 (Fireproof)</span>
+          <span class="chip">Baba Is You (Hempuli)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 SOURCES ================= -->
+  <section id="sources">
+    <div class="sec-head"><span class="sec-num">05</span><h2>출처 및 방법론</h2></div>
+    <p>
+      본 리포트의 모든 수치는 아래 공개 자료에 근거하며, 본문에 집계 기간과 출처를 병기했다.
+      제3자 데이터 기업의 추정치는 스토어 공식 수치가 아니므로 기관 간 수치가 다를 수 있다
+      (예: Block Blast!의 2025년 다운로드는 AppMagic 3억 5,620만 / 타 집계 3억 6,800만).
+      스토어 실시간 순위는 일 단위로 변동하므로 의사결정 시 최신 데이터 재확인을 권장한다.
+    </p>
+    <ol class="sources">
+      <li>Sensor Tower — <a href="https://sensortower.com/blog/state-of-mobile-gaming-apps" target="_blank" rel="noopener">State of Mobile Gaming</a> · <a href="https://sensortower.com/blog/top-10-worldwide-mobile-games-by-revenue-and-downloads-in-june-2026" target="_blank" rel="noopener">Top 10 Worldwide Mobile Games, June 2026</a> · <a href="https://sensortower.com/blog/state-of-mobile-2026" target="_blank" rel="noopener">State of Mobile 2026</a></li>
+      <li>AppMagic (via PocketGamer.biz) — <a href="https://www.pocketgamer.biz/puzzle-accounts-for-44-of-casual-mobile-earnings-in-h1-2026/" target="_blank" rel="noopener">Puzzle accounts for 44% of casual mobile earnings in H1 2026</a></li>
+      <li>mobilegamer.biz — <a href="https://mobilegamer.biz/the-top-mobile-game-downloads-of-2025/" target="_blank" rel="noopener">The top mobile game downloads of 2025</a> · <a href="https://mobilegamer.biz/2026s-top-10-grossing-mobile-games-so-far-honor-of-kings-whiteout-survival-lastwar-royal-match-pubg-mobile-more/" target="_blank" rel="noopener">2026's top grossing mobile games (so far)</a></li>
+      <li>Hungry Studio / Business Wire — <a href="https://www.businesswire.com/news/home/20260423998721/en/Block-Blast-Ends-Q1-2026-as-the-No.-1-Most-Downloaded-Mobile-Game-Worldwide" target="_blank" rel="noopener">Block Blast! Ends Q1 2026 as the No.1 Most Downloaded Mobile Game Worldwide</a></li>
+      <li>Udonis Blog — <a href="https://www.blog.udonis.co/top-games/south-korea" target="_blank" rel="noopener">Top Grossing Mobile Games in South Korea</a> · <a href="https://www.blog.udonis.co/top-games/japan" target="_blank" rel="noopener">Top Grossing Mobile Games in Japan</a> · <a href="https://www.blog.udonis.co/mobile-marketing/mobile-games/top-grossing-mobile-games" target="_blank" rel="noopener">Top Grossing Mobile Games Ranking</a></li>
+      <li>Outlook Respawn — <a href="https://respawn.outlookindia.com/gaming/gaming-news/top-mobile-puzzle-games-ruling-the-global-grossing-charts-in-2026" target="_blank" rel="noopener">Top Mobile Puzzle Games Ruling the Global Grossing Charts in 2026</a></li>
+      <li>Gamigion — <a href="https://www.gamigion.com/million-dollar-hybrid-casual-puzzles-in-2026/" target="_blank" rel="noopener">Million Dollar Hybrid Casual Puzzles in 2026</a> · <a href="https://www.gamigion.com/mobile-casual-games-report-h1-2026-analysis/" target="_blank" rel="noopener">Mobile Casual Games Report H1 2026 Analysis</a></li>
+      <li>Naavik — <a href="https://naavik.co/digest/what-leading-match-3-and-merge-games-do-differently/" target="_blank" rel="noopener">What Leading Match-3 &amp; Merge Games Do Differently</a></li>
+    </ol>
+    <p class="note">
+      방법론: 2026년 8월 3일 기준 공개 웹 자료를 교차 확인해 작성. 매출·다운로드 수치는 각 데이터 기업의 추정치이며,
+      환율·집계 방식 차이로 실제와 다를 수 있음. 대표작 선정은 각 하위 장르의 매출·다운로드 실적 및 업계 인지도 기준.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:var(--ink-2)">PUZZLE · INSIGHT</strong> — 내부 공유용 시장 리서치 문서 · 작성일 2026. 08. 03</p>
+    <p>본 문서는 공개된 제3자 시장 데이터를 인용한 내부 리서치 자료로, 투자 판단의 근거로 사용될 수 없습니다. 게임명·회사명은 각 권리자의 상표입니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>
