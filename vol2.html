@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PUZZLE INSIGHT Vol.2 — 경쟁작 분해 리서치 (정렬·잼·화살표)</title>
-<meta name="description" content="정렬·잼·화살표 계열 상위 16개 타이틀의 코어 루프·난이도·수익화 분해 리서치 — 진행 중">
+<title>PUZZLE INSIGHT Vol.2 — 경쟁작 분석 리서치 (정렬·잼·화살표)</title>
+<meta name="description" content="정렬·잼·화살표 계열 상위 16개 타이틀의 코어 루프·난이도·수익화 분석 리서치 — 진행 중">
 <style>
   :root{
     --paper:#F5F6F8;
@@ -312,18 +312,18 @@
 <div class="layout">
 
   <aside class="sidebar">
-    <div class="side-label">Vol.2 Contents</div>
+    <div class="side-label">Volumes</div>
+    <nav aria-label="볼륨">
+      <a href="index.html"><span>V1</span>시장 리서치</a>
+      <a href="vol2.html" class="active"><span>V2</span>경쟁작 분석</a>
+    </nav>
+    <div class="side-label" style="margin-top:26px">Vol.2 Contents</div>
     <nav id="side-nav" aria-label="목차">
-      <a href="#targets"><span>01</span>분해 대상 타이틀</a>
-      <a href="#template"><span>02</span>분해 시트 양식</a>
+      <a href="#targets"><span>01</span>분석 대상 타이틀</a>
+      <a href="#template"><span>02</span>분석 시트 양식</a>
       <a href="#guide"><span>03</span>실측 가이드</a>
       <a href="#sheets"><span>04</span>타이틀별 시트</a>
       <a href="#v2sources"><span>05</span>Vol.2 출처</a>
-    </nav>
-    <div class="side-label" style="margin-top:26px">Volumes</div>
-    <nav aria-label="볼륨">
-      <a href="index.html"><span>V1</span>시장 리서치</a>
-      <a href="vol2.html" class="active"><span>V2</span>경쟁작 분해</a>
     </nav>
     <div class="side-note">
       Vol.2는 데스크 리서치가 아닌 직접 플레이 계측이 본체다.
@@ -336,7 +336,7 @@
     <div class="hero">
       <div>
         <span class="eyebrow">Competitor Deconstruction · Vol.2 · 진행 중</span>
-        <h1>정렬·잼·화살표 경쟁작 분해 리서치</h1>
+        <h1>정렬·잼·화살표 경쟁작 분석 리서치</h1>
         <p class="lede">
           Vol.1이 &lsquo;어느 장르가 뜨는가&rsquo;를 다뤘다면, Vol.2는 <strong>왜 이기는가를 게임 시스템 수준에서
           해부</strong>한다. 대상 16종을 직접 플레이하며 코어 루프·난이도 설계·수익화 배치를 계측하고,
@@ -352,31 +352,31 @@
 
     <!-- 01 TARGETS -->
     <section id="targets">
-      <div class="sec-head"><span class="sec-num">01</span><h2>분해 대상 타이틀 — 선정 근거</h2></div>
+      <div class="sec-head"><span class="sec-num">01</span><h2>분석 대상 타이틀 — 선정 근거</h2></div>
       <p>
         선정 기준: ① 각 계열의 매출·다운로드 상위 검증작 ② 계열의 원형(origin)과 최신 변형을 모두 포함
         ③ 수익화 상한선 비교를 위한 대조군 포함. 선정 근거 열은 Vol.1에서 검증된 공개 팩트만 사용한다.
       </p>
       <div class="tbl-scroll">
         <table class="rank-tbl">
-          <caption>분해 대상 16종 (상태: 분해 예정 → 진행 중 → 완료)</caption>
+          <caption>분석 대상 16종 (상태: 분석 예정 → 진행 중 → 완료)</caption>
           <thead><tr><th>#</th><th>게임</th><th>계열</th><th>개발사</th><th>선정 근거 (공개 팩트)</th><th>상태</th></tr></thead>
           <tbody>
             <tr><td class="num">1</td><td class="game">Arrows – Puzzle Escape</td><td><span class="genre-chip">화살표</span></td><td>Lessmore (독일)</td><td class="metric">2026.5 전체 게임 글로벌 DL 1위 · 누적 8,000만+ · 계열의 원형</td><td><span class="status-chip st-done">데스크 조사 완료</span></td></tr>
-            <tr><td class="num">2</td><td class="game">Arrows GO!</td><td><span class="genre-chip">화살표</span></td><td>확인 예정</td><td class="metric">2026.6 글로벌 DL TOP 5 — 패스트 팔로워의 표본</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
-            <tr><td class="num">3</td><td class="game">Arrow Puzzle: Tap Puzzle Games</td><td><span class="genre-chip">화살표</span></td><td>확인 예정</td><td class="metric">2026.1 글로벌 DL TOP 10 — 트렌드 확산 확인용</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">2</td><td class="game">Arrows GO!</td><td><span class="genre-chip">화살표</span></td><td>확인 예정</td><td class="metric">2026.6 글로벌 DL TOP 5 — 패스트 팔로워의 표본</td><td><span class="status-chip st-todo">분석 예정</span></td></tr>
+            <tr><td class="num">3</td><td class="game">Arrow Puzzle: Tap Puzzle Games</td><td><span class="genre-chip">화살표</span></td><td>확인 예정</td><td class="metric">2026.1 글로벌 DL TOP 10 — 트렌드 확산 확인용</td><td><span class="status-chip st-todo">분석 예정</span></td></tr>
             <tr><td class="num">4</td><td class="game">Color Block Jam</td><td><span class="genre-chip">잼</span></td><td>Gybe Games · Rollic 퍼블리싱</td><td class="metric">하이브리드 캐주얼 히트 · 일본 DL 상위 — 잼 계열 최신 성공 공식</td><td><span class="status-chip st-done">데스크 조사 완료</span></td></tr>
             <tr><td class="num">5</td><td class="game">Parking Jam 3D</td><td><span class="genre-chip">잼</span></td><td>Popcore GmbH</td><td class="metric">2020.2 출시 · 설치 5,000만~8,000만 — 잼 장르 롱런 표본</td><td><span class="status-chip st-done">데스크 조사 완료</span></td></tr>
-            <tr><td class="num">6</td><td class="game">Unblock Me</td><td><span class="genre-chip">언블록</span></td><td>Kiragames</td><td class="metric">언블록 원형(2009~) — 규칙의 최소 단위 확인용</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
-            <tr><td class="num">7</td><td class="game">Coffee Mania</td><td><span class="genre-chip">정렬×잼</span></td><td>CrazyLabs</td><td class="metric">정렬×블록 하이브리드 실험작 — 계열 결합 사례</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">6</td><td class="game">Unblock Me</td><td><span class="genre-chip">언블록</span></td><td>Kiragames</td><td class="metric">언블록 원형(2009~) — 규칙의 최소 단위 확인용</td><td><span class="status-chip st-todo">분석 예정</span></td></tr>
+            <tr><td class="num">7</td><td class="game">Coffee Mania</td><td><span class="genre-chip">정렬×잼</span></td><td>CrazyLabs</td><td class="metric">정렬×블록 하이브리드 실험작 — 계열 결합 사례</td><td><span class="status-chip st-todo">분석 예정</span></td></tr>
             <tr><td class="num">8</td><td class="game">Screwdom</td><td><span class="genre-chip">나사 정렬</span></td><td>Rollic (Zynga)</td><td class="metric">누적 매출 $2,700만+ — 나사 정렬 수익화 검증작</td><td><span class="status-chip st-done">데스크 조사 완료</span></td></tr>
-            <tr><td class="num">9</td><td class="game">Screw Sort 3D</td><td><span class="genre-chip">나사 정렬</span></td><td>확인 예정</td><td class="metric">2026 일본 DL 상위 — 아시아 침투 확인용</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">9</td><td class="game">Screw Sort 3D</td><td><span class="genre-chip">나사 정렬</span></td><td>확인 예정</td><td class="metric">2026 일본 DL 상위 — 아시아 침투 확인용</td><td><span class="status-chip st-todo">분석 예정</span></td></tr>
             <tr><td class="num">10</td><td class="game">나사 정렬 추가 1종</td><td><span class="genre-chip">나사 정렬</span></td><td>—</td><td class="metric">실시간 차트 확인 후 확정 (Vol.1 차트 링크 활용)</td><td><span class="status-chip st-todo">선정 예정</span></td></tr>
             <tr><td class="num">11</td><td class="game">Hexa Sort</td><td><span class="genre-chip">색 정렬</span></td><td>gamebra.in·Mindstorm / Lion Studios</td><td class="metric">2023.7 출시 · 정렬 계열 매출 상위 · 매출 대부분이 광고 — 광고 주도 하이브리드 표본</td><td><span class="status-chip st-done">데스크 조사 완료</span></td></tr>
             <tr><td class="num">12</td><td class="game">Water Sort Puzzle</td><td><span class="genre-chip">색 정렬</span></td><td>IEC Global</td><td class="metric">물 정렬 원형 · 초장수 — 레벨 양산 구조의 교과서</td><td><span class="status-chip st-done">데스크 조사 완료</span></td></tr>
             <tr><td class="num">13</td><td class="game">정렬(선반·트리플) 추가 1종</td><td><span class="genre-chip">색 정렬</span></td><td>—</td><td class="metric">실시간 차트 확인 후 확정</td><td><span class="status-chip st-todo">선정 예정</span></td></tr>
             <tr><td class="num">14</td><td class="game">Block Blast!</td><td><span class="genre-chip">대조군 · 블록</span></td><td>Hungry Studio</td><td class="metric">DL 최강 대조군 — 광고 중심 수익화·무한 모드의 기준선</td><td><span class="status-chip st-done">데스크 조사 완료</span></td></tr>
-            <tr><td class="num">15</td><td class="game">Match Factory!</td><td><span class="genre-chip">대조군 · 3D 매치</span></td><td>Peak (Zynga)</td><td class="metric">3D 매치 상위 — 인접 계열의 난이도·부스터 설계 비교</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">15</td><td class="game">Match Factory!</td><td><span class="genre-chip">대조군 · 3D 매치</span></td><td>Peak (Zynga)</td><td class="metric">3D 매치 상위 — 인접 계열의 난이도·부스터 설계 비교</td><td><span class="status-chip st-todo">분석 예정</span></td></tr>
             <tr><td class="num">16</td><td class="game">Royal Match</td><td><span class="genre-chip">대조군 · 매치3</span></td><td>Dream Games</td><td class="metric">IAP·라이브옵스의 상한선 — 수익화 설계의 최상급 참조</td><td><span class="status-chip st-done">데스크 조사 완료</span></td></tr>
           </tbody>
         </table>
@@ -389,11 +389,11 @@
 
     <!-- 02 TEMPLATE -->
     <section id="template">
-      <div class="sec-head"><span class="sec-num">02</span><h2>분해 시트 양식</h2></div>
-      <p>타이틀당 1장. 7개 영역, 팩트/실측/해석을 구분해 기록한다.</p>
+      <div class="sec-head"><span class="sec-num">02</span><h2>분석 시트 양식</h2></div>
+      <p>타이틀당 1장. 7개 영역, 팩트/실측/해석을 구분석 기록한다.</p>
       <div class="tbl-scroll">
         <table>
-          <caption>분해 시트 v1 — 기록 항목</caption>
+          <caption>분석 시트 v1 — 기록 항목</caption>
           <thead><tr><th>영역</th><th>항목</th><th>기록 방식</th></tr></thead>
           <tbody>
             <tr><td class="num">A. 코어</td><td class="metric">Core Rule(한 문장) · 입력 방식 · 보드 크기/오브젝트 수 · 클리어 조건 · 실패 조건 · Deadlock 구조</td><td class="metric">플레이 관찰</td></tr>
@@ -422,7 +422,7 @@
 
     <!-- 04 SHEETS -->
     <section id="sheets">
-      <div class="sec-head"><span class="sec-num">04</span><h2>타이틀별 분해 시트 — 데스크 리서치</h2></div>
+      <div class="sec-head"><span class="sec-num">04</span><h2>타이틀별 분석 시트 — 데스크 리서치</h2></div>
       <p>
         방법 변경(2026.08.04): 전 타이틀 플레이 실측이 현실적으로 어려워, 1차로 <strong>데스크 리서치</strong>
         (스토어 리뷰·커뮤니티 반응·업계 분석 기사)로 시트를 채우고, 플레이 실측(레벨·광고 배치 계측)은
@@ -599,7 +599,7 @@
 
 <footer>
   <div class="mast-inner">
-    <p><strong style="color:var(--ink-2)">PUZZLE · INSIGHT</strong> — Vol.2 경쟁작 분해 리서치 · 착수 2026. 08. 04 · <a href="index.html">← Vol.1 시장 리서치</a></p>
+    <p><strong style="color:var(--ink-2)">PUZZLE · INSIGHT</strong> — Vol.2 경쟁작 분석 리서치 · 착수 2026. 08. 04 · <a href="index.html">← Vol.1 시장 리서치</a></p>
     <p>본 문서는 내부 리서치 자료입니다. 게임명·회사명은 각 권리자의 상표입니다.</p>
   </div>
 </footer>
