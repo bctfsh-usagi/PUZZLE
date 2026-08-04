@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PUZZLE INSIGHT Vol.2 — 경쟁작 분해 리서치 (정렬·잼·화살표)</title>
+<meta name="description" content="정렬·잼·화살표 계열 상위 16개 타이틀의 코어 루프·난이도·수익화 분해 리서치 — 진행 중">
+<style>
+  :root{
+    --paper:#F5F6F8;
+    --surface:#FFFFFF;
+    --ink:#161B26;
+    --ink-2:#3D4454;
+    --muted:#68707F;
+    --line:#DDE1E8;
+    --accent:#2B50C7;
+    --accent-soft:#E4EAFB;
+    --amber:#9A5B00;
+    --amber-soft:#F6ECDB;
+    --bar-1:#2B50C7;
+    --bar-2:#5B7BDA;
+    --bar-3:#8CA3E8;
+    --bar-4:#BCC9F1;
+    --good:#1B7A4B;
+    --good-soft:#E2F2E9;
+    --bad:#B3261E;
+    --bad-soft:#F9E5E4;
+    --tile-a:#2B50C7; --tile-b:#D97706; --tile-c:#1B7A4B; --tile-d:#B91C1C; --tile-e:#7C3AED;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#0F1219; --surface:#171C27; --ink:#E9EBF1; --ink-2:#C3C9D6; --muted:#8B93A5;
+      --line:#2A3140; --accent:#7C98EE; --accent-soft:#1E2946; --amber:#E3A551; --amber-soft:#33270F;
+      --bar-1:#6D8BE8; --bar-2:#5570C4; --bar-3:#3E549A; --bar-4:#2B3B6E;
+      --good:#4CBF87; --good-soft:#132B20; --bad:#E8837C; --bad-soft:#33191723;
+      --bad-soft:#331917;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0F1219; --surface:#171C27; --ink:#E9EBF1; --ink-2:#C3C9D6; --muted:#8B93A5;
+    --line:#2A3140; --accent:#7C98EE; --accent-soft:#1E2946; --amber:#E3A551; --amber-soft:#33270F;
+    --bar-1:#6D8BE8; --bar-2:#5570C4; --bar-3:#3E549A; --bar-4:#2B3B6E;
+    --good:#4CBF87; --good-soft:#132B20; --bad:#E8837C; --bad-soft:#331917;
+  }
+  :root[data-theme="light"]{
+    --paper:#F5F6F8; --surface:#FFFFFF; --ink:#161B26; --ink-2:#3D4454; --muted:#68707F;
+    --line:#DDE1E8; --accent:#2B50C7; --accent-soft:#E4EAFB; --amber:#9A5B00; --amber-soft:#F6ECDB;
+    --bar-1:#2B50C7; --bar-2:#5B7BDA; --bar-3:#8CA3E8; --bar-4:#BCC9F1;
+    --good:#1B7A4B; --good-soft:#E2F2E9; --bad:#B3261E; --bad-soft:#F9E5E4;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; scroll-padding-top:24px; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", "Segoe UI", sans-serif;
+    line-height:1.7;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover, a:focus-visible{ text-decoration:underline; }
+  a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
+
+  /* ---------- Top masthead ---------- */
+  .masthead{ border-bottom:1px solid var(--line); background:var(--surface); }
+  .mast-inner{
+    max-width:1240px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    font-size:12px; color:var(--muted); letter-spacing:.08em;
+  }
+  .brand{ font-weight:800; font-size:15px; letter-spacing:.14em; color:var(--ink); white-space:nowrap; }
+  .brand em{ font-style:normal; color:var(--accent); }
+  .mast-meta{ text-align:right; }
+
+  /* ---------- Layout: sidebar + content ---------- */
+  .layout{
+    max-width:1240px; margin:0 auto; padding:0 24px;
+    display:grid; grid-template-columns:236px minmax(0,1fr); gap:48px;
+    align-items:start;
+  }
+  .sidebar{
+    position:sticky; top:0; max-height:100vh; overflow-y:auto;
+    padding:28px 0 40px; border-right:1px solid var(--line);
+  }
+  .side-label{
+    font-size:11px; font-weight:700; letter-spacing:.14em; color:var(--muted);
+    text-transform:uppercase; margin:18px 0 8px;
+  }
+  .side-label:first-child{ margin-top:0; }
+  .sidebar nav{ display:flex; flex-direction:column; }
+  .sidebar nav a{
+    display:flex; gap:9px; align-items:baseline;
+    padding:7px 14px 7px 0; font-size:13.5px; font-weight:600; color:var(--ink-2);
+    border-left:2px solid transparent; padding-left:12px; margin-left:-14px;
+    line-height:1.45;
+  }
+  .sidebar nav a span{ color:var(--muted); font-variant-numeric:tabular-nums; font-size:12px; }
+  .sidebar nav a:hover{ text-decoration:none; color:var(--accent); }
+  .sidebar nav a.active{ color:var(--accent); border-left-color:var(--accent); background:var(--accent-soft); border-radius:0 6px 6px 0; }
+  .sidebar nav a.active span{ color:var(--accent); }
+  .side-note{ margin-top:22px; font-size:12px; color:var(--muted); line-height:1.6; padding-right:16px; }
+
+  main{ padding:8px 0 48px; min-width:0; }
+
+  @media (max-width:900px){
+    .layout{ display:block; }
+    .sidebar{ position:static; max-height:none; border-right:none; border-bottom:1px solid var(--line); padding:18px 0; }
+    .sidebar nav{ flex-direction:row; flex-wrap:wrap; gap:2px 18px; }
+    .sidebar nav a{ border-left:none; margin-left:0; padding:4px 0; }
+    .sidebar nav a.active{ background:none; }
+    .side-note{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding:44px 0 8px; display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center; }
+  .hero h1{
+    font-size:clamp(26px, 3.6vw, 40px); font-weight:800; line-height:1.28;
+    letter-spacing:-.02em; text-wrap:balance;
+  }
+  .hero .lede{ margin-top:16px; max-width:640px; color:var(--ink-2); font-size:16.5px; }
+  .eyebrow{
+    display:inline-block; font-size:12px; font-weight:700; letter-spacing:.16em;
+    color:var(--amber); text-transform:uppercase; margin-bottom:12px;
+  }
+  .meta-row{ display:flex; flex-wrap:wrap; gap:8px 24px; margin-top:20px; font-size:13px; color:var(--muted); }
+  .meta-row b{ color:var(--ink-2); font-weight:600; }
+  .motif{ display:grid; grid-template-columns:repeat(4, 24px); grid-auto-rows:24px; gap:5px; }
+  .motif i{ border-radius:5px; opacity:.92; }
+  .m-a{ background:var(--tile-a);} .m-b{ background:var(--tile-b);} .m-c{ background:var(--tile-c);}
+  .m-d{ background:var(--tile-d);} .m-e{ background:var(--tile-e);} .m-x{ background:var(--line); opacity:.55;}
+  @media (max-width:720px){ .hero{ grid-template-columns:1fr; } .motif{ display:none; } }
+
+  /* ---------- Sections ---------- */
+  section{ padding:40px 0 10px; border-bottom:1px solid var(--line); margin-bottom:14px; }
+  section:last-of-type{ border-bottom:none; }
+  .sec-head{ display:flex; align-items:baseline; gap:14px; margin-bottom:8px; }
+  .sec-num{ font-size:13px; font-weight:800; color:var(--accent); font-variant-numeric:tabular-nums; letter-spacing:.06em; }
+  h2{ font-size:clamp(20px, 2.4vw, 26px); font-weight:800; letter-spacing:-.01em; text-wrap:balance; }
+  h3{ font-size:17px; font-weight:700; margin:28px 0 10px; }
+  p{ margin:12px 0; color:var(--ink-2); max-width:74ch; }
+  p.note{ font-size:13px; color:var(--muted); }
+  strong{ color:var(--ink); }
+  ul.plain{ margin:10px 0 10px 2px; list-style:none; }
+  ul.plain li{ padding-left:18px; position:relative; margin:7px 0; color:var(--ink-2); }
+  ul.plain li::before{ content:""; position:absolute; left:0; top:.72em; width:8px; height:8px; border-radius:2px; background:var(--accent); }
+
+  /* ---------- Stat tiles ---------- */
+  .tiles{ display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin:24px 0 8px; }
+  @media (max-width:720px){ .tiles{ grid-template-columns:1fr; } }
+  .tile{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:20px 22px; }
+  .tile .k{ font-size:12px; font-weight:700; letter-spacing:.1em; color:var(--muted); text-transform:uppercase; }
+  .tile .v{ font-size:30px; font-weight:800; letter-spacing:-.02em; margin:6px 0 2px; font-variant-numeric:tabular-nums; }
+  .tile .d{ font-size:13px; color:var(--muted); }
+  .tile .up{ color:var(--good); font-weight:700; }
+  .tiles.mini{ grid-template-columns:repeat(3, 1fr); }
+  @media (max-width:720px){ .tiles.mini{ grid-template-columns:1fr 1fr; } }
+  .tiles.mini .v{ font-size:22px; }
+
+  /* ---------- Figures / charts ---------- */
+  figure.chart{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:24px 26px 18px; margin:26px 0;
+  }
+  figure.chart figcaption{ margin-bottom:18px; }
+  figure.chart .fig-title{ font-size:15px; font-weight:700; color:var(--ink); }
+  figure.chart .fig-sub{ font-size:12.5px; color:var(--muted); margin-top:2px; }
+  .hbar-row{ display:grid; grid-template-columns:150px 1fr 84px; align-items:center; gap:12px; margin:11px 0; }
+  @media (max-width:600px){ .hbar-row{ grid-template-columns:110px 1fr 74px; } }
+  .hbar-label{ font-size:13.5px; font-weight:600; color:var(--ink-2); text-align:right; line-height:1.3; }
+  .hbar-fill{ height:20px; border-radius:0 4px 4px 0; background:var(--bar-2); min-width:3px; }
+  .hbar-fill.lead{ background:var(--bar-1); }
+  .hbar-val{ font-size:13px; font-weight:700; font-variant-numeric:tabular-nums; color:var(--ink); }
+  .fig-src{ margin-top:14px; font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:10px; }
+
+  .share-bar{ display:flex; height:34px; border-radius:6px; overflow:hidden; margin:6px 0 14px; }
+  .share-bar div{ height:100%; }
+  .share-bar div + div{ border-left:2px solid var(--surface); }
+  .legend{ display:flex; flex-wrap:wrap; gap:8px 20px; font-size:13px; color:var(--ink-2); }
+  .legend i{ display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:7px; }
+
+  /* ---------- Tables ---------- */
+  .tbl-scroll{ overflow-x:auto; margin:18px 0 6px; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
+  table{ border-collapse:collapse; width:100%; min-width:640px; font-size:14px; }
+  caption{ text-align:left; padding:16px 18px 4px; font-weight:700; font-size:15px; color:var(--ink); }
+  th{
+    text-align:left; font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); font-weight:700; padding:12px 18px; border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  td{ padding:12px 18px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-2); }
+  tr:last-child td{ border-bottom:none; }
+  td.num{ font-variant-numeric:tabular-nums; font-weight:700; color:var(--ink); white-space:nowrap; }
+  .src{ font-size:12px; color:var(--muted); white-space:nowrap; }
+
+  .country-flag{ display:inline-flex; align-items:center; gap:10px; margin:30px 0 4px; font-size:18px; font-weight:800; }
+  .country-flag .tag{
+    font-size:11px; font-weight:700; letter-spacing:.1em; color:var(--accent);
+    background:var(--accent-soft); border-radius:4px; padding:3px 9px;
+  }
+
+  /* ---------- Genre cards ---------- */
+  .genres{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:24px 0; }
+  @media (max-width:760px){ .genres{ grid-template-columns:1fr; } }
+  .gcard{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:20px 22px; }
+  .gcard h4{ font-size:16px; font-weight:800; display:flex; align-items:center; gap:10px; }
+  .gcard h4 i{ width:12px; height:12px; border-radius:3px; flex:none; }
+  .gcard .en{ font-size:12px; color:var(--muted); font-weight:600; letter-spacing:.05em; margin-left:2px; }
+  .gcard p{ font-size:13.5px; margin:9px 0 11px; color:var(--ink-2); }
+  .chips{ display:flex; flex-wrap:wrap; gap:6px; }
+  .chip{
+    font-size:12.5px; font-weight:600; color:var(--ink-2);
+    border:1px solid var(--line); border-radius:100px; padding:3px 11px; background:var(--paper);
+  }
+
+  /* ---------- Deep-dive profiles ---------- */
+  .profiles{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:24px 0; }
+  @media (max-width:860px){ .profiles{ grid-template-columns:1fr; } }
+  .pcard{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px 24px; }
+  .pcard .p-top{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:4px; }
+  .pcard h4{ font-size:17px; font-weight:800; }
+  .pcard .dev{ font-size:12.5px; color:var(--muted); }
+  .pcard .p-tag{
+    font-size:11px; font-weight:700; letter-spacing:.08em; white-space:nowrap;
+    border-radius:4px; padding:3px 9px; background:var(--accent-soft); color:var(--accent);
+  }
+  .pcard dl{ margin:14px 0 10px; display:grid; grid-template-columns:auto 1fr; gap:6px 16px; font-size:13.5px; }
+  .pcard dt{ color:var(--muted); font-weight:600; white-space:nowrap; }
+  .pcard dd{ color:var(--ink-2); font-variant-numeric:tabular-nums; }
+  .pcard .why{ font-size:13px; color:var(--ink-2); border-top:1px solid var(--line); padding-top:10px; margin-top:6px; }
+  .pcard .why b{ color:var(--amber); }
+
+  /* ---------- Opportunity matrix ---------- */
+  .verdict{ display:inline-block; font-size:12px; font-weight:700; border-radius:4px; padding:2px 9px; white-space:nowrap; }
+  .v-go{ background:var(--good-soft); color:var(--good); }
+  .v-watch{ background:var(--amber-soft); color:var(--amber); }
+  .v-avoid{ background:var(--bad-soft); color:var(--bad); }
+
+  /* callouts */
+  .callout{
+    border-left:3px solid var(--amber); background:var(--amber-soft);
+    border-radius:0 8px 8px 0; padding:14px 18px; margin:20px 0; font-size:14px; color:var(--ink-2);
+    max-width:78ch;
+  }
+  .callout b{ color:var(--amber); }
+  .sowhat{
+    border-left:3px solid var(--accent); background:var(--accent-soft);
+    border-radius:0 8px 8px 0; padding:14px 18px; margin:20px 0; font-size:14px; color:var(--ink-2);
+    max-width:78ch;
+  }
+  .sowhat b{ color:var(--accent); }
+
+  /* ---------- Research log ---------- */
+  .log{ margin:20px 0; border:1px solid var(--line); border-radius:10px; background:var(--surface); overflow:hidden; }
+  .log-item{ display:grid; grid-template-columns:110px 90px 1fr; gap:16px; padding:14px 20px; border-bottom:1px solid var(--line); font-size:14px; }
+  .log-item:last-child{ border-bottom:none; }
+  .log-date{ font-variant-numeric:tabular-nums; font-weight:700; color:var(--ink); white-space:nowrap; }
+  .log-vol{ color:var(--accent); font-weight:700; white-space:nowrap; }
+  .log-desc{ color:var(--ink-2); }
+  @media (max-width:600px){ .log-item{ grid-template-columns:1fr; gap:2px; } }
+
+
+  /* ---------- Ranking tables & chart links ---------- */
+  .rank-tbl td:first-child{ width:44px; }
+  .rank-tbl .game{ font-weight:700; color:var(--ink); white-space:nowrap; }
+  .rank-tbl .game a{ color:var(--ink); }
+  .rank-tbl .game a:hover{ color:var(--accent); }
+  .rank-tbl .genre-chip{
+    display:inline-block; font-size:11.5px; font-weight:700; color:var(--accent);
+    background:var(--accent-soft); border-radius:4px; padding:1px 8px; white-space:nowrap;
+  }
+  .rank-tbl .metric{ font-size:13px; }
+  .rank-tbl .metric b{ color:var(--ink); font-variant-numeric:tabular-nums; }
+  .chart-links{ display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 26px; }
+  .chart-links a{
+    font-size:12.5px; font-weight:600; color:var(--ink-2);
+    border:1px solid var(--line); border-radius:100px; padding:5px 14px; background:var(--surface);
+  }
+  .chart-links a:hover{ color:var(--accent); border-color:var(--accent); text-decoration:none; }
+  .chart-links .lbl{ font-size:12px; font-weight:700; color:var(--muted); align-self:center; margin-right:2px; letter-spacing:.06em; }
+
+  /* ---------- Sources / footer ---------- */
+  ol.sources{ margin:14px 0 10px 20px; font-size:13.5px; color:var(--ink-2); }
+  ol.sources li{ margin:7px 0; }
+  footer{ border-top:1px solid var(--line); background:var(--surface); padding:26px 0 40px; font-size:12.5px; color:var(--muted); }
+  footer .mast-inner{ display:block; letter-spacing:0; }
+  footer p{ font-size:12.5px; color:var(--muted); max-width:none; margin:4px 0; }
+</style>
+<style>
+  .status-chip{ display:inline-block; font-size:11.5px; font-weight:700; border-radius:100px; padding:2px 10px; white-space:nowrap; }
+  .st-todo{ background:var(--amber-soft); color:var(--amber); }
+  .st-doing{ background:var(--accent-soft); color:var(--accent); }
+  .st-done{ background:var(--good-soft); color:var(--good); }
+  .sheet{ background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:22px 24px; margin:22px 0; }
+  .sheet h4{ font-size:16px; font-weight:800; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .sheet .meta{ font-size:12.5px; color:var(--muted); margin:2px 0 12px; }
+  .blank{ color:var(--muted); font-style:normal; }
+  .blank::before{ content:"— "; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="mast-inner">
+    <span class="brand"><a href="index.html" style="color:inherit">PUZZLE<em>·</em>INSIGHT</a></span>
+    <span class="mast-meta">VOL.2 — COMPETITOR DECONSTRUCTION · IN PROGRESS</span>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="side-label">Vol.2 Contents</div>
+    <nav id="side-nav" aria-label="목차">
+      <a href="#targets"><span>01</span>분해 대상 타이틀</a>
+      <a href="#template"><span>02</span>분해 시트 양식</a>
+      <a href="#guide"><span>03</span>실측 가이드</a>
+      <a href="#sheets"><span>04</span>타이틀별 시트</a>
+    </nav>
+    <div class="side-label" style="margin-top:26px">Volumes</div>
+    <nav aria-label="볼륨">
+      <a href="index.html"><span>V1</span>시장 리서치</a>
+      <a href="vol2.html" class="active"><span>V2</span>경쟁작 분해</a>
+    </nav>
+    <div class="side-note">
+      Vol.2는 데스크 리서치가 아닌 직접 플레이 계측이 본체다.
+      공개 팩트는 미리 채워져 있고, &lsquo;실측&rsquo; 칸은 플레이 기록으로 채운다.
+    </div>
+  </aside>
+
+  <main>
+
+    <div class="hero">
+      <div>
+        <span class="eyebrow">Competitor Deconstruction · Vol.2 · 진행 중</span>
+        <h1>정렬·잼·화살표 경쟁작 분해 리서치</h1>
+        <p class="lede">
+          Vol.1이 &lsquo;어느 장르가 뜨는가&rsquo;를 다뤘다면, Vol.2는 <strong>왜 이기는가를 게임 시스템 수준에서
+          해부</strong>한다. 대상 16종을 직접 플레이하며 코어 루프·난이도 설계·수익화 배치를 계측하고,
+          최종적으로 &lsquo;우리가 만들 후보 메커닉&rsquo;의 근거를 만든다.
+        </p>
+        <div class="meta-row">
+          <span><b>착수일</b> 2026. 08. 04</span>
+          <span><b>대상</b> 16종 (화살표 3 · 잼 4 · 나사 3 · 정렬 3 · 대조군 3)</span>
+          <span><b>진행</b> 0 / 16</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01 TARGETS -->
+    <section id="targets">
+      <div class="sec-head"><span class="sec-num">01</span><h2>분해 대상 타이틀 — 선정 근거</h2></div>
+      <p>
+        선정 기준: ① 각 계열의 매출·다운로드 상위 검증작 ② 계열의 원형(origin)과 최신 변형을 모두 포함
+        ③ 수익화 상한선 비교를 위한 대조군 포함. 선정 근거 열은 Vol.1에서 검증된 공개 팩트만 사용한다.
+      </p>
+      <div class="tbl-scroll">
+        <table class="rank-tbl">
+          <caption>분해 대상 16종 (상태: 분해 예정 → 진행 중 → 완료)</caption>
+          <thead><tr><th>#</th><th>게임</th><th>계열</th><th>개발사</th><th>선정 근거 (공개 팩트)</th><th>상태</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td class="game">Arrows – Puzzle Escape</td><td><span class="genre-chip">화살표</span></td><td>Lessmore UG (독일)</td><td class="metric">2026.5 전체 게임 글로벌 DL 1위 · 누적 8,000만+ · 계열의 원형</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">2</td><td class="game">Arrows GO!</td><td><span class="genre-chip">화살표</span></td><td>확인 예정</td><td class="metric">2026.6 글로벌 DL TOP 5 — 패스트 팔로워의 표본</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">3</td><td class="game">Arrow Puzzle: Tap Puzzle Games</td><td><span class="genre-chip">화살표</span></td><td>확인 예정</td><td class="metric">2026.1 글로벌 DL TOP 10 — 트렌드 확산 확인용</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">4</td><td class="game">Color Block Jam</td><td><span class="genre-chip">잼</span></td><td>Rollic (Zynga)</td><td class="metric">하이브리드 캐주얼 히트 · 일본 DL 상위 — 잼 계열 최신 성공 공식</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">5</td><td class="game">Parking Jam 3D</td><td><span class="genre-chip">잼</span></td><td>Popcore</td><td class="metric">잼 장르 장수 상위작 — 롱런 운영 구조 확인용</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">6</td><td class="game">Unblock Me</td><td><span class="genre-chip">언블록</span></td><td>Kiragames</td><td class="metric">언블록 원형(2009~) — 규칙의 최소 단위 확인용</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">7</td><td class="game">Coffee Mania</td><td><span class="genre-chip">정렬×잼</span></td><td>CrazyLabs</td><td class="metric">정렬×블록 하이브리드 실험작 — 계열 결합 사례</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">8</td><td class="game">Screwdom</td><td><span class="genre-chip">나사 정렬</span></td><td>Rollic (Zynga)</td><td class="metric">누적 매출 $2,700만+ — 나사 정렬 수익화 검증작</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">9</td><td class="game">Screw Sort 3D</td><td><span class="genre-chip">나사 정렬</span></td><td>확인 예정</td><td class="metric">2026 일본 DL 상위 — 아시아 침투 확인용</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">10</td><td class="game">나사 정렬 추가 1종</td><td><span class="genre-chip">나사 정렬</span></td><td>—</td><td class="metric">실시간 차트 확인 후 확정 (Vol.1 차트 링크 활용)</td><td><span class="status-chip st-todo">선정 예정</span></td></tr>
+            <tr><td class="num">11</td><td class="game">Hexa Sort</td><td><span class="genre-chip">색 정렬</span></td><td>Lion Studios</td><td class="metric">정렬 계열 IAP 매출 상위 이력 + 광고 매출 강세 — 하이브리드 배합 참고</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">12</td><td class="game">Water Sort Puzzle</td><td><span class="genre-chip">색 정렬</span></td><td>IEC Global</td><td class="metric">물 정렬 원형 · 초장수 — 레벨 양산 구조의 교과서</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">13</td><td class="game">정렬(선반·트리플) 추가 1종</td><td><span class="genre-chip">색 정렬</span></td><td>—</td><td class="metric">실시간 차트 확인 후 확정</td><td><span class="status-chip st-todo">선정 예정</span></td></tr>
+            <tr><td class="num">14</td><td class="game">Block Blast!</td><td><span class="genre-chip">대조군 · 블록</span></td><td>Hungry Studio</td><td class="metric">DL 최강 대조군 — 광고 중심 수익화·무한 모드의 기준선</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">15</td><td class="game">Match Factory!</td><td><span class="genre-chip">대조군 · 3D 매치</span></td><td>Peak (Zynga)</td><td class="metric">3D 매치 상위 — 인접 계열의 난이도·부스터 설계 비교</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+            <tr><td class="num">16</td><td class="game">Royal Match</td><td><span class="genre-chip">대조군 · 매치3</span></td><td>Dream Games</td><td class="metric">IAP·라이브옵스의 상한선 — 수익화 설계의 최상급 참조</td><td><span class="status-chip st-todo">분해 예정</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">
+        #10·#13은 순위 변동이 빠른 계열이라 착수 시점의 실시간 차트(Vol.1 &lsquo;실시간 차트 확인&rsquo; 링크)로 확정한다.
+        #2·#3·#9의 개발사는 스토어 페이지에서 확인 후 기입.
+      </p>
+    </section>
+
+    <!-- 02 TEMPLATE -->
+    <section id="template">
+      <div class="sec-head"><span class="sec-num">02</span><h2>분해 시트 양식</h2></div>
+      <p>타이틀당 1장. 7개 영역, 팩트/실측/해석을 구분해 기록한다.</p>
+      <div class="tbl-scroll">
+        <table>
+          <caption>분해 시트 v1 — 기록 항목</caption>
+          <thead><tr><th>영역</th><th>항목</th><th>기록 방식</th></tr></thead>
+          <tbody>
+            <tr><td class="num">A. 코어</td><td class="metric">Core Rule(한 문장) · 입력 방식 · 보드 크기/오브젝트 수 · 클리어 조건 · 실패 조건 · Deadlock 구조</td><td class="metric">플레이 관찰</td></tr>
+            <tr><td class="num">B. 난이도</td><td class="metric">난이도 변수 목록 · 신규 메커닉/블로커 투입 레벨 · 레벨 1/5/10/20/30/50/100 실측(오브젝트 수·색상 수·유효 선택지·클리어 시간·실패 횟수)</td><td class="metric">레벨별 실측 기록</td></tr>
+            <tr><td class="num">C. 세션</td><td class="metric">1판 평균 길이 · 평균 입력 횟수 · Undo 유무 · 재도전 마찰 · FTUE 소요 시간</td><td class="metric">초시계 실측 (3회 평균)</td></tr>
+            <tr><td class="num">D. 수익화</td><td class="metric">IAP 품목/가격 · 부스터 종류/획득/소비 · Lives · 보상형 광고 노출 시점 · 전면 광고 빈도</td><td class="metric">플레이 로그 (최소 30분)</td></tr>
+            <tr><td class="num">E. 운영</td><td class="metric">메타 요소 · 라이브옵스 이벤트 · 업데이트 주기(스토어 기록) · 리뷰에서 유저가 좋아/싫어하는 점 상위 3개</td><td class="metric">스토어 페이지 + 리뷰 50개 스캔</td></tr>
+            <tr><td class="num">F. UA</td><td class="metric">광고 크리에이티브 유형(오답 유도/완벽 클리어/도발형) · 광고와 실플레이 일치도</td><td class="metric">광고 라이브러리 조사</td></tr>
+            <tr><td class="num">G. 종합</td><td class="metric">경쟁작과 딱 하나 다른 점 · 레벨 1,000개 양산 가능성 판단 · 우리가 훔칠 것/버릴 것</td><td class="metric">해석 (작성자 판단 명시)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 03 GUIDE -->
+    <section id="guide">
+      <div class="sec-head"><span class="sec-num">03</span><h2>실측 가이드 — 이렇게 잰다</h2></div>
+      <ul class="plain">
+        <li><strong>레벨 샘플링</strong> — 레벨 1/5/10/20/30/50/100에서 스크린샷 1장 + 기록. 100까지 도달이 어려우면 도달 최고 레벨을 명시하고 그 지점까지 기록한다.</li>
+        <li><strong>시간 측정</strong> — 판당 시간은 같은 레벨 3회 평균. FTUE는 설치 후 첫 입력까지, 그리고 &lsquo;규칙을 이해했다&rsquo;고 느낀 시점까지 두 개를 잰다.</li>
+        <li><strong>광고 로그</strong> — 최소 30분 연속 플레이하며 광고가 뜬 시각과 직전 상황(실패 직후/레벨 클리어 후/부스터 제안)을 기록한다. 이 배치가 곧 그 게임의 수익화 설계도다.</li>
+        <li><strong>실패 조건 재현</strong> — 일부러 져본다. 실패 → 재도전 사이의 마찰(광고? 라이프 차감? 즉시 재시작?)이 리텐션 설계의 핵심 단서다.</li>
+        <li><strong>기록 원칙</strong> — 관찰(팩트)과 해석(판단)을 칸으로 구분한다. Vol.1과 동일한 원칙.</li>
+      </ul>
+    </section>
+
+    <!-- 04 SHEETS -->
+    <section id="sheets">
+      <div class="sec-head"><span class="sec-num">04</span><h2>타이틀별 분해 시트</h2></div>
+      <p>
+        공개 팩트(개발사·성과·수익 모델)는 Vol.1 검증 데이터로 미리 채웠다. <strong class="blank">표시가 있는 칸이 실측 대상</strong>이다.
+        1번 시트(Arrows)부터 착수를 권장한다.
+      </p>
+
+      <div class="sheet">
+        <h4>#1 Arrows – Puzzle Escape <span class="status-chip st-todo">분해 예정</span></h4>
+        <div class="meta">Lessmore UG (독일) · 2025.7 출시 · 누적 8,000만+ DL · 2026.5 글로벌 DL 1위 → 6월 전체 3위 (공개 팩트, Vol.1 검증)</div>
+        <div class="tbl-scroll">
+          <table>
+            <thead><tr><th>영역</th><th>기록</th></tr></thead>
+            <tbody>
+              <tr><td class="num">A. 코어</td><td class="metric">Core Rule: 화살표가 가리키는 방향으로 블록을 빼내 보드를 비운다 (공개 정보 기준 — 플레이로 검증할 것) · 입력: Tap · 보드/실패 조건: <span class="blank">실측</span></td></tr>
+              <tr><td class="num">B. 난이도</td><td class="metric">레벨 1/5/10/20/30/50/100 실측표: <span class="blank">실측</span></td></tr>
+              <tr><td class="num">C. 세션</td><td class="metric">판당 시간·입력 횟수·FTUE: <span class="blank">실측</span></td></tr>
+              <tr><td class="num">D. 수익화</td><td class="metric">광고+IAP 하이브리드 (공개 보도 기준) · 광고 배치·IAP 품목: <span class="blank">실측</span></td></tr>
+              <tr><td class="num">E. 운영</td><td class="metric">업데이트 주기·리뷰 분석: <span class="blank">조사</span></td></tr>
+              <tr><td class="num">F. UA</td><td class="metric">Sensor Tower가 숏폼 크리에이티브 적합성을 성장 요인으로 지목 (Vol.1) · 크리에이티브 유형 분해: <span class="blank">조사</span></td></tr>
+              <tr><td class="num">G. 종합</td><td class="metric"><span class="blank">플레이 후 작성</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="sheet">
+        <h4>#4 Color Block Jam <span class="status-chip st-todo">분해 예정</span></h4>
+        <div class="meta">Rollic / Zynga · 하이브리드 캐주얼 히트 · 일본 DL 상위 (공개 팩트, Vol.1 검증)</div>
+        <div class="tbl-scroll">
+          <table>
+            <thead><tr><th>영역</th><th>기록</th></tr></thead>
+            <tbody>
+              <tr><td class="num">A. 코어</td><td class="metric"><span class="blank">실측</span></td></tr>
+              <tr><td class="num">B. 난이도</td><td class="metric"><span class="blank">실측</span></td></tr>
+              <tr><td class="num">C. 세션</td><td class="metric"><span class="blank">실측</span></td></tr>
+              <tr><td class="num">D. 수익화</td><td class="metric">Rollic 하이브리드 수익화 모델군 (공개 보도) · 상세: <span class="blank">실측</span></td></tr>
+              <tr><td class="num">E. 운영</td><td class="metric"><span class="blank">조사</span></td></tr>
+              <tr><td class="num">F. UA</td><td class="metric"><span class="blank">조사</span></td></tr>
+              <tr><td class="num">G. 종합</td><td class="metric"><span class="blank">플레이 후 작성</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="note">
+        #2~#16 시트는 동일 양식으로 착수 시 추가한다. 시트가 채워질 때마다 이 페이지에 커밋하고,
+        완료 시 상태 칩을 갱신한다 (분해 예정 → 진행 중 → 완료).
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="mast-inner">
+    <p><strong style="color:var(--ink-2)">PUZZLE · INSIGHT</strong> — Vol.2 경쟁작 분해 리서치 · 착수 2026. 08. 04 · <a href="index.html">← Vol.1 시장 리서치</a></p>
+    <p>본 문서는 내부 리서치 자료입니다. 게임명·회사명은 각 권리자의 상표입니다.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('#side-nav a');
+  var map = {};
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(el) map[id] = a;
+  });
+  var current = null;
+  function setActive(id){
+    if(current === id) return;
+    current = id;
+    links.forEach(function(a){ a.classList.remove('active'); });
+    if(map[id]) map[id].classList.add('active');
+  }
+  if('IntersectionObserver' in window){
+    var visible = {};
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ visible[e.target.id] = e.isIntersecting; });
+      var ids = Object.keys(map);
+      for(var i = 0; i < ids.length; i++){
+        if(visible[ids[i]]){ setActive(ids[i]); break; }
+      }
+    }, { rootMargin: '-10% 0px -70% 0px' });
+    Object.keys(map).forEach(function(id){ io.observe(document.getElementById(id)); });
+  }
+})();
+</script>
+
+</body>
+</html>
