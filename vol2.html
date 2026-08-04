@@ -321,13 +321,12 @@
     <nav id="side-nav" aria-label="목차">
       <a href="#targets"><span>01</span>분석 대상 타이틀</a>
       <a href="#template"><span>02</span>분석 시트 양식</a>
-      <a href="#guide"><span>03</span>실측 가이드</a>
-      <a href="#sheets"><span>04</span>타이틀별 시트</a>
-      <a href="#v2sources"><span>05</span>Vol.2 출처</a>
+      <a href="#sheets"><span>03</span>타이틀별 시트</a>
+      <a href="#v2sources"><span>04</span>Vol.2 출처</a>
     </nav>
     <div class="side-note">
-      Vol.2는 데스크 리서치가 아닌 직접 플레이 계측이 본체다.
-      공개 팩트는 미리 채워져 있고, &lsquo;실측&rsquo; 칸은 플레이 기록으로 채운다.
+      Vol.2는 스토어 리뷰·업계 분석·기사를 교차 조사하는
+      데스크 리서치로 진행하며, 모든 내용에 출처를 병기한다.
     </div>
   </aside>
 
@@ -339,13 +338,13 @@
         <h1>정렬·잼·화살표 경쟁작 분석 리서치</h1>
         <p class="lede">
           Vol.1이 &lsquo;어느 장르가 뜨는가&rsquo;를 다뤘다면, Vol.2는 <strong>왜 이기는가를 게임 시스템 수준에서
-          해부</strong>한다. 대상 16종을 직접 플레이하며 코어 루프·난이도 설계·수익화 배치를 계측하고,
+          해부</strong>한다. 대상 16종의 스토어 리뷰·성과 데이터·업계 분석을 교차 조사해,
           최종적으로 &lsquo;우리가 만들 후보 메커닉&rsquo;의 근거를 만든다.
         </p>
         <div class="meta-row">
           <span><b>착수일</b> 2026. 08. 04</span>
           <span><b>대상</b> 16종 (화살표 3 · 잼 4 · 나사 3 · 정렬 3 · 대조군 3)</span>
-          <span><b>진행</b> 데스크 조사 8 / 16 · 플레이 실측 0 / 16</span>
+          <span><b>진행</b> 조사 완료 8 / 16종</span>
         </div>
       </div>
     </div>
@@ -390,43 +389,29 @@
     <!-- 02 TEMPLATE -->
     <section id="template">
       <div class="sec-head"><span class="sec-num">02</span><h2>분석 시트 양식</h2></div>
-      <p>타이틀당 1장. 7개 영역, 팩트/실측/해석을 구분석 기록한다.</p>
+      <p>타이틀당 1장. 6개 영역을 데스크 리서치로 채우고, 팩트와 해석을 구분해 기록한다.</p>
       <div class="tbl-scroll">
         <table>
-          <caption>분석 시트 v1 — 기록 항목</caption>
-          <thead><tr><th>영역</th><th>항목</th><th>기록 방식</th></tr></thead>
+          <caption>분석 시트 v2 — 기록 항목 (데스크 리서치 기반)</caption>
+          <thead><tr><th>영역</th><th>내용</th><th>조사 소스</th></tr></thead>
           <tbody>
-            <tr><td class="num">A. 코어</td><td class="metric">Core Rule(한 문장) · 입력 방식 · 보드 크기/오브젝트 수 · 클리어 조건 · 실패 조건 · Deadlock 구조</td><td class="metric">플레이 관찰</td></tr>
-            <tr><td class="num">B. 난이도</td><td class="metric">난이도 변수 목록 · 신규 메커닉/블로커 투입 레벨 · 레벨 1/5/10/20/30/50/100 실측(오브젝트 수·색상 수·유효 선택지·클리어 시간·실패 횟수)</td><td class="metric">레벨별 실측 기록</td></tr>
-            <tr><td class="num">C. 세션</td><td class="metric">1판 평균 길이 · 평균 입력 횟수 · Undo 유무 · 재도전 마찰 · FTUE 소요 시간</td><td class="metric">초시계 실측 (3회 평균)</td></tr>
-            <tr><td class="num">D. 수익화</td><td class="metric">IAP 품목/가격 · 부스터 종류/획득/소비 · Lives · 보상형 광고 노출 시점 · 전면 광고 빈도</td><td class="metric">플레이 로그 (최소 30분)</td></tr>
-            <tr><td class="num">E. 운영</td><td class="metric">메타 요소 · 라이브옵스 이벤트 · 업데이트 주기(스토어 기록) · 리뷰에서 유저가 좋아/싫어하는 점 상위 3개</td><td class="metric">스토어 페이지 + 리뷰 50개 스캔</td></tr>
-            <tr><td class="num">F. UA</td><td class="metric">광고 크리에이티브 유형(오답 유도/완벽 클리어/도발형) · 광고와 실플레이 일치도</td><td class="metric">광고 라이브러리 조사</td></tr>
-            <tr><td class="num">G. 종합</td><td class="metric">경쟁작과 딱 하나 다른 점 · 레벨 1,000개 양산 가능성 판단 · 우리가 훔칠 것/버릴 것</td><td class="metric">해석 (작성자 판단 명시)</td></tr>
+            <tr><td class="num">개요·성과</td><td class="metric">Core Rule(한 문장) · 개발사·출시 시기 · 평점·리뷰 수 · 다운로드·매출 등 공개 성과 지표</td><td class="metric">스토어 페이지 · 데이터 기업 보도</td></tr>
+            <tr><td class="num">긍정 피드백</td><td class="metric">유저가 좋아하는 점 상위 요약 (해당 게임 의견만)</td><td class="metric">스토어 리뷰 · 리뷰 집계 사이트</td></tr>
+            <tr><td class="num">부정 피드백</td><td class="metric">불만 상위 요약 — 광고·난이도·버그·수익화 변경 등</td><td class="metric">스토어 리뷰 · 커뮤니티</td></tr>
+            <tr><td class="num">BM</td><td class="metric">광고/IAP 구조 · 수익화 변화 이력 (예: 보상형 광고 축소)</td><td class="metric">스토어 고지 · 업계 분석</td></tr>
+            <tr><td class="num">운영·UA</td><td class="metric">업데이트 동향 · 광고 크리에이티브 유형 (조사 가능 범위 내)</td><td class="metric">스토어 기록 · 광고 라이브러리 · 기사</td></tr>
+            <tr><td class="num">시사점</td><td class="metric">우리가 배울 것 / 피할 것 — 작성자 해석임을 명시</td><td class="metric">작성자 판단</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- 03 GUIDE -->
-    <section id="guide">
-      <div class="sec-head"><span class="sec-num">03</span><h2>실측 가이드 — 이렇게 잰다</h2></div>
-      <ul class="plain">
-        <li><strong>레벨 샘플링</strong> — 레벨 1/5/10/20/30/50/100에서 스크린샷 1장 + 기록. 100까지 도달이 어려우면 도달 최고 레벨을 명시하고 그 지점까지 기록한다.</li>
-        <li><strong>시간 측정</strong> — 판당 시간은 같은 레벨 3회 평균. FTUE는 설치 후 첫 입력까지, 그리고 &lsquo;규칙을 이해했다&rsquo;고 느낀 시점까지 두 개를 잰다.</li>
-        <li><strong>광고 로그</strong> — 최소 30분 연속 플레이하며 광고가 뜬 시각과 직전 상황(실패 직후/레벨 클리어 후/부스터 제안)을 기록한다. 이 배치가 곧 그 게임의 수익화 설계도다.</li>
-        <li><strong>실패 조건 재현</strong> — 일부러 져본다. 실패 → 재도전 사이의 마찰(광고? 라이프 차감? 즉시 재시작?)이 리텐션 설계의 핵심 단서다.</li>
-        <li><strong>기록 원칙</strong> — 관찰(팩트)과 해석(판단)을 칸으로 구분한다. Vol.1과 동일한 원칙.</li>
-      </ul>
-    </section>
-
     <!-- 04 SHEETS -->
     <section id="sheets">
-      <div class="sec-head"><span class="sec-num">04</span><h2>타이틀별 분석 시트 — 데스크 리서치</h2></div>
+      <div class="sec-head"><span class="sec-num">03</span><h2>타이틀별 분석 시트 — 데스크 리서치</h2></div>
       <p>
-        방법 변경(2026.08.04): 전 타이틀 플레이 실측이 현실적으로 어려워, 1차로 <strong>데스크 리서치</strong>
-        (스토어 리뷰·커뮤니티 반응·업계 분석 기사)로 시트를 채우고, 플레이 실측(레벨·광고 배치 계측)은
-        후보 압축 후 상위 3~5종에만 수행한다. 긍정/부정 피드백은 각 게임의 스토어·리뷰 사이트에서 수집한
+        Vol.2는 <strong>데스크 리서치</strong>(스토어 리뷰·커뮤니티 반응·업계 분석 기사)로 진행한다.
+        긍정/부정 피드백은 각 게임의 스토어·리뷰 사이트에서 수집한
         <strong>해당 게임 유저 의견의 요약</strong>이며(타 게임 내용 배제), 정량 지표가 아니라 여론의 방향으로 읽어야 한다.
       </p>
 
@@ -442,7 +427,6 @@
               <tr><td class="num">부정 피드백</td><td class="metric">트로피·연승 스트릭 도입 후 &lsquo;단순·힐링 게임이 경쟁적으로 변질됐다&rsquo;는 반발 · 업데이트 후 실행 지연 등 성능 저하 보고 · &lsquo;금방 질린다&rsquo;는 콘텐츠 수명 우려</td></tr>
               <tr><td class="num">BM</td><td class="metric">광고 + IAP 하이브리드 (스토어 고지 기준). Sensor Tower가 숏폼 광고 크리에이티브 적합성을 성장 동인으로 지목(Vol.1)</td></tr>
               <tr><td class="num">시사점 (해석)</td><td class="metric">&lsquo;무압박&rsquo;이라는 포지셔닝 자체가 차별점이었는데, 리텐션용 메타(트로피)를 얹자 코어 팬이 반발 — <b>포지셔닝 일관성이 기능 추가보다 우선</b>이라는 교훈</td></tr>
-              <tr><td class="num">실측 잔여</td><td class="metric"><span class="blank">레벨 1~100 난이도 실측 · 광고 노출 시점 로그</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -459,8 +443,7 @@
               <tr><td class="num">긍정 피드백</td><td class="metric">하이퍼캐주얼 대비 &lsquo;정제되고 부드러운&rsquo; 완성도 평가 · 운이 아닌 <b>결정론적 풀이</b>(실력 게임)라는 점이 분석가들의 주목 포인트</td></tr>
               <tr><td class="num">부정 피드백</td><td class="metric">버그와 음악 관련 불편 보고 · 평점 4.0으로 조사 대상 중 낮은 편 — 리뷰 상세 스캔 필요</td></tr>
               <tr><td class="num">BM</td><td class="metric">광고 + IAP. 업계 분석(Gamesforum)이 <b>&lsquo;단계적 수익화&rsquo;</b>(초반 절제 → 진행에 따라 강도 상승) 사례로 다룸 · 광고 매출 구조 분석글(Braberg) 존재</td></tr>
-              <tr><td class="num">시사점 (해석)</td><td class="metric">잼 계열 최신 성공 공식 = 결정론적 퍼즐 + 단계적 수익화. 초반 광고 절제가 리뷰 방어와 리텐션에 기여했을 가능성 — 실측으로 광고 도입 시점 확인 필요</td></tr>
-              <tr><td class="num">실측 잔여</td><td class="metric"><span class="blank">광고가 시작되는 레벨 계측 · 타이머 레벨 유무 확인</span></td></tr>
+              <tr><td class="num">시사점 (해석)</td><td class="metric">잼 계열 최신 성공 공식 = 결정론적 퍼즐 + 단계적 수익화. 초반 광고 절제가 리뷰 방어와 리텐션에 기여했을 가능성이 있다(해석)</td></tr>
             </tbody>
           </table>
         </div>
@@ -478,7 +461,6 @@
               <tr><td class="num">부정 피드백</td><td class="metric">광고 과다 — 광고 제거 구매 후에도 보상 경로에 광고 잔존 불만 · <b>&lsquo;2,000레벨을 해도 너무 쉽다&rsquo;</b>는 난이도 정체 비판 · 유령 차 충돌, 스태미나 이중 차감, 광고 크래시 등 버그</td></tr>
               <tr><td class="num">BM</td><td class="metric">광고 중심 + 광고 제거 IAP + idle 메타 수익</td></tr>
               <tr><td class="num">시사점 (해석)</td><td class="metric">난이도를 낮게 유지하면 다운로드·초반 경험엔 유리하지만 <b>수천 레벨 뒤 콘텐츠가 소모감으로 변한다</b> — 레벨 양산과 난이도 곡선의 균형이 잼 계열의 핵심 설계 문제</td></tr>
-              <tr><td class="num">실측 잔여</td><td class="metric"><span class="blank">레벨 난이도 변곡점 계측</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -496,7 +478,6 @@
               <tr><td class="num">부정 피드백</td><td class="metric">광고 길이·빈도 대비 플레이 시간 불균형 · 과거엔 광고 시청으로 추가 슬롯/구제를 얻었으나 <b>보상형 광고 옵션이 제거되고 코인 결제로 대체</b>됨 + &lsquo;자주 막히는&rsquo; 난이도와 결합돼 강한 불만</td></tr>
               <tr><td class="num">BM</td><td class="metric">광고 + IAP → 보상형 광고 축소·유료 재화 중심으로 강화되는 추세</td></tr>
               <tr><td class="num">시사점 (해석)</td><td class="metric">RV(보상형 광고) 제거는 단기 매출을 올리지만 평점·신뢰를 깎는 트레이드오프 — Hexa Sort에서도 동일 패턴 확인. <b>구제 수단의 유료화 속도</b>가 이 계열의 여론 변곡점</td></tr>
-              <tr><td class="num">실측 잔여</td><td class="metric"><span class="blank">막힘 발생 레벨 분포 · 구제 가격 체계</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -514,7 +495,6 @@
               <tr><td class="num">부정 피드백</td><td class="metric">레벨/실패마다 광고 · <b>플레이 중 광고 삽입 + 음소거 무시</b> 보고 · 보상형 광고 부스터를 없애고 코인·부스터 구매를 유도한다는 불만</td></tr>
               <tr><td class="num">BM</td><td class="metric"><b>매출 대부분이 광고</b>(MAF 분석) — 광고 주도형 하이브리드의 대표 사례</td></tr>
               <tr><td class="num">시사점 (해석)</td><td class="metric">광고 주도 모델의 수익 상한과 부작용(리뷰 악화·이탈)을 동시에 보여주는 표본. &lsquo;만족감 루프&rsquo;가 강할수록 광고 압박의 허용치도 커지지만 한계가 있다</td></tr>
-              <tr><td class="num">실측 잔여</td><td class="metric"><span class="blank">광고 빈도 실측 · IAP 전환 압박 시점</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -532,7 +512,6 @@
               <tr><td class="num">부정 피드백</td><td class="metric">10레벨에 광고 10개 수준의 빈도 · 광고 길이가 15~30초에서 <b>60초로 길어졌다</b>는 불만 · <b>&lsquo;레벨 200 이후 1,163레벨까지 같은 판이 순환된다&rsquo;</b>는 레벨 다양성 고갈 증언</td></tr>
               <tr><td class="num">BM</td><td class="metric">광고 절대 중심</td></tr>
               <tr><td class="num">시사점 (해석)</td><td class="metric">정렬 계열의 수명 한계 표본 — <b>레벨 생성의 다양성이 고갈되면 광고 피로만 남는다</b>. &lsquo;레벨 1,000개 양산 가능성&rsquo; 검증 항목이 왜 필수인지 보여주는 반면교사</td></tr>
-              <tr><td class="num">실측 잔여</td><td class="metric"><span class="blank">레벨 순환 구간 확인</span></td></tr>
             </tbody>
           </table>
         </div>
@@ -585,7 +564,7 @@
 
     <!-- SOURCES -->
     <section id="v2sources">
-      <div class="sec-head"><span class="sec-num">05</span><h2>Vol.2 출처</h2></div>
+      <div class="sec-head"><span class="sec-num">04</span><h2>Vol.2 출처</h2></div>
       <ol class="sources">
         <li>스토어 페이지 (A급) — 각 시트의 Google Play/App Store 링크 참조 (평점·리뷰 수·IAP 고지)</li>
         <li>업계 분석 (B급) — <a href="https://www.globalgamesforum.com/news/color-block-jam-the-art-of-monetization-in-stages" target="_blank" rel="noopener">Gamesforum: Color Block Jam 단계적 수익화</a> · <a href="https://maf.ad/en/blog/hexa-sort-hybrid-casual/" target="_blank" rel="noopener">MAF: Hexa Sort 하이브리드 분석</a> · <a href="https://maf.ad/en/blog/block-blast/" target="_blank" rel="noopener">MAF: Block Blast 인기 요인</a> · <a href="https://felixbraberg.substack.com/p/unlocking-the-secrets-of-color-block-71d" target="_blank" rel="noopener">Braberg: Color Block Jam 광고 매출</a></li>
