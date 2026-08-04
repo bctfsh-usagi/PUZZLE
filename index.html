@@ -312,10 +312,11 @@
       <a href="#trend"><span>02</span>시장 동향</a>
       <a href="#country"><span>03</span>국가별 지형 (한·미·일)</a>
       <a href="#genre"><span>04</span>장르 지형도</a>
-      <a href="#deepdive"><span>05</span>주목 타이틀 심층</a>
-      <a href="#opportunity"><span>06</span>기회 영역 분석</a>
-      <a href="#log"><span>07</span>리서치 로그</a>
-      <a href="#sources"><span>08</span>출처 및 방법론</a>
+      <a href="#bm"><span>05</span>BM · 플랫폼 전략</a>
+      <a href="#deepdive"><span>06</span>주목 타이틀 심층</a>
+      <a href="#opportunity"><span>07</span>기회 영역 분석</a>
+      <a href="#log"><span>08</span>리서치 로그</a>
+      <a href="#sources"><span>09</span>출처 및 방법론</a>
     </nav>
     <div class="side-note">
       본 문서는 팀 공유용 리서치 허브입니다. 신규 리서치는 섹션과
@@ -386,7 +387,7 @@
         <div class="tile"><div class="k">한국 퍼즐 매출 성장률</div><div class="v">+18%</div><div class="d">하위 장르 중 1위 <span class="src">(Sensor Tower, 2023 리포트)</span></div></div>
       </div>
       <div class="sowhat">
-        <b>So What.</b> 신규 개발 관점의 결론은 06장에 정리했다. 요지는 &lsquo;성숙한 매치3 정면승부 회피,
+        <b>So What.</b> 신규 개발 관점의 결론은 07장에 정리했다. 요지는 &lsquo;성숙한 매치3 정면승부 회피,
         성장 중인 정렬·잼(Jam) 계열에서 하이브리드 수익화로 빠른 검증&rsquo;이다.
       </div>
     </section>
@@ -885,9 +886,110 @@
       </div>
     </section>
 
+    <!-- ================= 05 BM / PLATFORM ================= -->
+    <section id="bm">
+      <div class="sec-head"><span class="sec-num">05</span><h2>BM · 플랫폼 전략 — 무엇으로 벌고, 어디서 낼 것인가</h2></div>
+
+      <h3>퍼즐 게임의 4가지 수익 모델</h3>
+      <p>
+        퍼즐은 모바일 게임 광고 생태계의 중심 장르다. Sensor Tower의 광고 수익화 딥다이브에 따르면
+        <strong>퍼즐 장르가 모바일 게임 전체 인게임 광고 수익의 53%를 차지</strong>하며(2위 아케이드 13%),
+        광고를 탑재한 게임 비중은 2021년 45%에서 2026년 5월 56%까지 늘었다. 2025년 모바일 게임
+        광고 수익은 $120억을 넘어섰다. 단, 지역별 편차가 크다 — 신흥 시장(인도·인도네시아·브라질)은
+        매출의 55~70%가 광고인 반면, <strong>성숙 시장(미국·캐나다·한국·일본)은 77~90%가 IAP</strong>다.
+      </p>
+      <div class="tbl-scroll">
+        <table>
+          <caption>수익 모델 비교 — 검증 사례와 데이터 근거</caption>
+          <thead><tr><th>모델</th><th>구조</th><th>검증 사례</th><th>데이터 근거</th><th>판단 (해석)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="num">광고 중심<br>(IAA)</td>
+              <td class="metric">전면·배너 광고가 수익의 대부분, IAP 최소</td>
+              <td class="metric">Block Blast!(광고 제거 IAP조차 없음), Water Sort Puzzle</td>
+              <td class="metric">퍼즐 = 게임 광고 수익의 <b>53%</b> · Block Blast! MAU 3억 규모 사업 성립</td>
+              <td class="metric">대량 다운로드형 캐주얼의 기본값. 단, Vol.2 조사에서 부정 리뷰 1위가 예외 없이 광고 — 상한 설계 필수</td>
+            </tr>
+            <tr>
+              <td class="num">하이브리드<br>(IAA+IAP)</td>
+              <td class="metric">광고 기반 + 부스터·광고 제거 IAP 병행</td>
+              <td class="metric">Arrows – Puzzle Escape, Hexa Sort, Color Block Jam(단계적 강화)</td>
+              <td class="metric">하이브리드 캐주얼 퍼즐 H1 2026 매출 <b>$6억</b> · 보상형 광고 비중 17.7%(<b>+53.9%</b>) · RV 참여율은 전면 광고의 2~3배</td>
+              <td class="metric"><b>본 리포트의 권장 기본 전략</b>(07장과 일치). 단, 보상형 광고를 나중에 없애는 전환은 반발이 검증됨(Vol.2 — Screwdom·Hexa Sort)</td>
+            </tr>
+            <tr>
+              <td class="num">순수 IAP</td>
+              <td class="metric">광고 0, 부스터·라이프·이벤트 판매</td>
+              <td class="metric">Royal Match($13.7억, 광고 없음), Candy Crush Saga, Gossip Harbor</td>
+              <td class="metric">성숙 시장 매출의 <b>77~90%</b>가 IAP · 퍼즐 매출 상위권 전원이 이 모델</td>
+              <td class="metric">매출 상한이 가장 높으나 최상급 라이브옵스 물량이 전제 — 소규모 팀의 초기 전략으로는 비추천</td>
+            </tr>
+            <tr>
+              <td class="num">구독·번들</td>
+              <td class="metric">플랫폼 구독에 포함, 광고·IAP 없음</td>
+              <td class="metric">NYT Games(Wordle), Netflix Puzzled(2025.11~)</td>
+              <td class="metric">Netflix가 퍼즐 전용 허브를 별도 출시할 만큼 구독 플랫폼의 퍼즐 수요 확인</td>
+              <td class="metric">직접 수익화가 아닌 선급/제휴형 트랙 — 별도 기회로 관리</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <b>그래서 광고인가?</b> 절반만 맞다. 퍼즐이 광고 수익의 53%를 차지한다는 것은 &lsquo;광고가 잘 되는 장르&rsquo;라는
+        뜻이지 &lsquo;광고만으로 충분하다&rsquo;는 뜻이 아니다. 우리가 노리는 성숙 시장(미·한·일)은 매출의 77~90%가
+        IAP이므로, <b>광고로 시작하되 부스터·광고 제거 IAP를 처음부터 설계에 포함한 하이브리드</b>가 데이터가
+        가리키는 답이다. 보상형 광고는 참여율이 전면 광고의 2~3배이므로 &lsquo;벌칙&rsquo;이 아니라 &lsquo;보상&rsquo;으로 배치한다.
+      </div>
+
+      <h3>플랫폼 지형 — 어디서 낼 것인가</h3>
+      <p>
+        2025년 모바일 앱 소비 지출은 $1,670억(전년比 +10.6%), 게임 지출은 $810억으로 전략·퍼즐·액션이
+        성장을 이끌었다(Sensor Tower State of Mobile). 퍼즐 수요는 모바일을 넘어 구독·소셜 플랫폼으로
+        확산 중이지만, 수익과 유저가 집중된 본진은 여전히 모바일 양대 마켓이다.
+      </p>
+      <div class="tbl-scroll">
+        <table>
+          <caption>플랫폼 비교 — 퍼즐 게임 관점</caption>
+          <thead><tr><th>플랫폼</th><th>근거 (팩트)</th><th>판단 (해석)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="num">모바일<br>(iOS + 구글 플레이)</td>
+              <td class="metric">퍼즐 다운로드 연 <b>97억 회</b> · 게임 지출 $810억의 성장 축 · 한국 게임 이용자의 모바일 이용률 <b>89.1%</b>(콘진원) · 본 리포트의 모든 상위작이 모바일 발</td>
+              <td class="metric"><b>유일한 1순위.</b> 짧은 세션·터치 입력·광고 생태계 모두 퍼즐과 정합. 양대 마켓 동시 출시가 기본</td>
+            </tr>
+            <tr>
+              <td class="num">웹 (HTML5 포털)</td>
+              <td class="metric">Hexa Sort 등 상위 캐주얼 퍼즐이 CrazyGames 등 웹 포털에 병행 서비스 중</td>
+              <td class="metric">UA 비용 없는 보조 유입·메커닉 테스트 채널. 본진이 아닌 실험실로 활용</td>
+            </tr>
+            <tr>
+              <td class="num">구독 플랫폼<br>(Netflix Games 등)</td>
+              <td class="metric">Netflix, 퍼즐 전용 허브 <b>Puzzled</b> 출시(2025.11, 광고·IAP 없음) · 게임 90여 종, TV로 확장 중 · Monument Valley 3는 넷플릭스 독점 후 2025.7 멀티플랫폼 전환</td>
+              <td class="metric">개발비 보전(선급)형 대안 트랙. 플랫폼이 퍼즐을 직접 찾는 시기라 소규모 팀에게도 문이 열려 있음</td>
+            </tr>
+            <tr>
+              <td class="num">소셜·미디어 내장<br>(YouTube · LinkedIn)</td>
+              <td class="metric">YouTube Playables 게임 75종+ 확대 · LinkedIn이 로직 퍼즐 기반 인앱 게임 도입</td>
+              <td class="metric">퍼즐 수요가 플랫폼 전반으로 번지는 신호. 직접 진출보다는 트렌드 관찰 대상</td>
+            </tr>
+            <tr>
+              <td class="num">PC · 콘솔</td>
+              <td class="metric">프리미엄 인디 퍼즐 트랙(Baba Is You, Monument Valley 3 멀티플랫폼 사례)</td>
+              <td class="metric">유료 단품 판매의 별도 사업 — F2P 캐주얼 전략과는 분리해서 판단</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sowhat">
+        <b>So What.</b> 결론은 명확하다 — <b>모바일 양대 마켓 동시 출시 + 하이브리드 수익화</b>가 기본,
+        웹 포털은 무료 테스트 채널, 구독 플랫폼은 프로토타입 검증 후의 제휴 옵션. 광고 배치는 Vol.2에서
+        확인된 반면교사(플레이 중 삽입 금지, 보상형 광고 유지)를 설계 원칙으로 삼는다.
+      </div>
+    </section>
+
     <!-- ================= 05 DEEP DIVE ================= -->
     <section id="deepdive">
-      <div class="sec-head"><span class="sec-num">05</span><h2>주목 타이틀 심층 — 무엇이 이들을 이기게 했나</h2></div>
+      <div class="sec-head"><span class="sec-num">06</span><h2>주목 타이틀 심층 — 무엇이 이들을 이기게 했나</h2></div>
       <p>
         현재 시장을 정의하는 4개 타이틀을 골라 공개된 수치와 함께 성공 요인을 정리했다.
         각 카드 하단의 &lsquo;주목 포인트&rsquo;는 공개 자료에 근거한 본 리포트의 분석이다.
@@ -976,7 +1078,7 @@
 
     <!-- ================= 06 OPPORTUNITY ================= -->
     <section id="opportunity">
-      <div class="sec-head"><span class="sec-num">06</span><h2>기회 영역 분석 — 무엇을 만들 것인가</h2></div>
+      <div class="sec-head"><span class="sec-num">07</span><h2>기회 영역 분석 — 무엇을 만들 것인가</h2></div>
       <p>
         앞선 팩트를 근거로 하위 장르별 진입 매력도를 평가했다. <strong>&lsquo;근거&rsquo; 열은 팩트, &lsquo;판단&rsquo; 열은
         그 팩트에 기반한 본 리포트의 해석</strong>이므로 구분해서 읽기 바란다.
@@ -1040,7 +1142,7 @@
 
     <!-- ================= 07 LOG ================= -->
     <section id="log">
-      <div class="sec-head"><span class="sec-num">07</span><h2>리서치 로그</h2></div>
+      <div class="sec-head"><span class="sec-num">08</span><h2>리서치 로그</h2></div>
       <p>
         본 문서는 1회성 보고서가 아니라 누적형 리서치 허브로 운영한다. 새 리서치가 추가될 때마다
         본문 섹션과 아래 로그에 호(Vol.)를 기록한다.
@@ -1065,6 +1167,11 @@
           <span class="log-date">2026. 08. 04</span>
           <span class="log-vol">Vol.1.3</span>
           <span class="log-desc">리서치 범위 확장 — 모바일인덱스 국내 MAU 순위(블록 블라스트 2026.5 국내 게임 MAU 1위 등극), 콘진원 2025 게임이용자 실태조사 공식 통계 반영, 데이터 소스 가이드 신설</span>
+        </div>
+        <div class="log-item">
+          <span class="log-date">2026. 08. 04</span>
+          <span class="log-vol">Vol.1.5</span>
+          <span class="log-desc">BM·플랫폼 전략(05장) 신설 — 4개 수익 모델 비교(퍼즐 = 게임 광고 수익 53%, 성숙 시장 IAP 77~90% 근거), 플랫폼 지형(모바일·웹·구독·소셜·PC) 정리 및 권장 전략 도출</span>
         </div>
         <div class="log-item">
           <span class="log-date">2026. 08. 04</span>
@@ -1106,7 +1213,7 @@
 
     <!-- ================= 08 SOURCES ================= -->
     <section id="sources">
-      <div class="sec-head"><span class="sec-num">08</span><h2>출처 및 방법론</h2></div>
+      <div class="sec-head"><span class="sec-num">09</span><h2>출처 및 방법론</h2></div>
       <p>
         본 리포트의 모든 수치는 아래 공개 자료에 근거하며, 본문에 집계 기간과 출처를 병기했다.
         제3자 데이터 기업의 추정치는 스토어 공식 수치가 아니므로 기관 간 수치가 다를 수 있다
@@ -1169,12 +1276,14 @@
         <li>모바일인덱스/아이지에이웍스 — <a href="https://www.igaworksblog.com/post/reports-mobilegame-chart-2603" target="_blank" rel="noopener">2026년 3월 인기 모바일 게임 순위</a> · <a href="https://www.openads.co.kr/content/contentDetail?contsId=19410" target="_blank" rel="noopener">2026년 5월 인기 모바일 게임 순위</a> · <a href="https://www.sentv.co.kr/article/view/sentv202604070132" target="_blank" rel="noopener">서울경제TV: K-모바일 게임 MAU 톱10 전무 (2026.4)</a></li>
         <li>한국콘텐츠진흥원 — <a href="https://www.kocca.kr/kocca/koccanews/reportview.do?menuNo=204767&nttNo=1073" target="_blank" rel="noopener">2025 게임이용자 실태조사</a> · <a href="https://zdnet.co.kr/view/?no=20251218172447" target="_blank" rel="noopener">ZDNet Korea 보도</a></li>
         <li>와이즈앱·리테일·굿즈 — <a href="https://www.wiseapp.co.kr/insight/detail/884/2025-top-user-time-sessions-app-trend" target="_blank" rel="noopener">2025 모바일 앱 총결산 리포트</a></li>
+        <li>Sensor Tower — <a href="https://sensortower.com/blog/gaming-deep-dive-ad-monetization-report" target="_blank" rel="noopener">Gaming Deep Dive: Ad Monetization</a> · <a href="https://gameworldobserver.com/2026/07/06/in-2025-mobile-game-advertising-revenue-exceeded-12-billion-analytics" target="_blank" rel="noopener">GWO: 2025 모바일 게임 광고 수익 $120억 돌파</a> · <a href="https://sensortower.com/blog/state-of-mobile-2026" target="_blank" rel="noopener">State of Mobile 2026 ($167B 지출)</a></li>
+        <li>플랫폼 동향 — <a href="https://www.netflix.com/tudum/articles/new-netflix-games-play-on-tv-2025" target="_blank" rel="noopener">Netflix Tudum: Puzzled·TV 게임</a> · <a href="https://www.whats-on-netflix.com/news/netflix-games/netflix-puzzled-new-mobile-puzzle-game-hub-to-launch-on-netflix-games/" target="_blank" rel="noopener">Netflix Puzzled 출시</a> · <a href="https://www.socialmediatoday.com/news/youtube-rolls-in-app-games-more-users/717287/" target="_blank" rel="noopener">YouTube Playables 확대</a></li>
         <li>추가 검증 — <a href="https://zdnet.co.kr/view/?no=20251111163819" target="_blank" rel="noopener">ZDNet Korea: 위메이드플레이 2025 3분기 실적</a> · <a href="https://www.newsis.com/view/NISX20240910_0002882667" target="_blank" rel="noopener">뉴시스: 애니팡 머지 출시(2024.9)</a> · <a href="https://www.gametoc.co.kr/news/articleView.html?idxno=84597" target="_blank" rel="noopener">게임톡: 애니팡 머지 구글 인기 1위(2024.9)</a> · <a href="https://www.capermint.com/blog/develop-game-like-arrows-puzzle-escape/" target="_blank" rel="noopener">Capermint: Arrows – Puzzle Escape 분석 (Lessmore UG)</a> · <a href="https://tracxn.com/d/companies/hungry-studio/__WdaLeX_uPAGLKMIzvEGU5SfLZQLdfHGlWFNUObr1Nig" target="_blank" rel="noopener">Tracxn: Hungry Studio 기업 정보</a></li>
       </ol>
       <p class="note">
         방법론: 2026년 8월 3~4일 공개 웹 자료를 교차 확인해 작성(팩트체크·정오표 개정 8월 4일, 리서치 로그에 기록). 수치 채택은 상단 출처 등급 체계를 따름. 매출·다운로드 수치는 각 데이터 기업의 추정치이며,
         환율·집계 방식 차이로 실제와 다를 수 있음. 대표작 선정은 각 하위 장르의 매출·다운로드 실적 및 업계 인지도 기준.
-        05장 &lsquo;주목 포인트&rsquo;와 06장 &lsquo;판단·제언&rsquo;은 상기 팩트에 근거한 리포트 작성자의 해석임을 명시한다.
+        06장 &lsquo;주목 포인트&rsquo;와 07장 &lsquo;판단·제언&rsquo;은 상기 팩트에 근거한 리포트 작성자의 해석임을 명시한다.
       </p>
     </section>
 
