@@ -155,6 +155,9 @@
   .tile .v{ font-size:30px; font-weight:800; letter-spacing:-.02em; margin:6px 0 2px; font-variant-numeric:tabular-nums; }
   .tile .d{ font-size:13px; color:var(--muted); }
   .tile .up{ color:var(--good); font-weight:700; }
+  .tiles.mini{ grid-template-columns:repeat(3, 1fr); }
+  @media (max-width:720px){ .tiles.mini{ grid-template-columns:1fr 1fr; } }
+  .tiles.mini .v{ font-size:22px; }
 
   /* ---------- Figures / charts ---------- */
   figure.chart{
@@ -328,7 +331,7 @@
           <strong>어떤 퍼즐 게임을 만들 것인가</strong>에 대한 판단 재료를 제공한다.
         </p>
         <div class="meta-row">
-          <span><b>작성일</b> 2026. 08. 03</span>
+          <span><b>작성일</b> 2026. 08. 03 (개정 08. 04)</span>
           <span><b>커버리지</b> 글로벌 · 한국 · 미국 · 일본</span>
           <span><b>데이터 출처</b> Sensor Tower · AppMagic 외 (본문 명기)</span>
         </div>
@@ -349,17 +352,17 @@
         <div class="tile">
           <div class="k">2025 퍼즐 IAP 매출</div>
           <div class="v">$100억+</div>
-          <div class="d"><span class="up">▲ 전년 대비 +14%</span> · 전략에 이어 매출 2위 장르 <span class="src">(Sensor Tower)</span></div>
+          <div class="d"><span class="up">▲ 전년 대비 +14%</span> · 전 세계 IAP 기준(광고 매출 제외) · 매출 2위 장르 <span class="src">(Sensor Tower)</span></div>
         </div>
         <div class="tile">
           <div class="k">2025 퍼즐 다운로드</div>
           <div class="v">97억 회+</div>
-          <div class="d">전년 대비 약 −3%, 최다 다운로드 장르군 유지 <span class="src">(Sensor Tower)</span></div>
+          <div class="d">전 세계 양대 마켓 합산 · 전년 대비 약 −3% <span class="src">(Sensor Tower)</span></div>
         </div>
         <div class="tile">
           <div class="k">2026 상반기 퍼즐 매출</div>
           <div class="v">$49억</div>
-          <div class="d">캐주얼 게임 매출의 44% 이상 점유 <span class="src">(AppMagic)</span></div>
+          <div class="d">전 세계 순매출(net) · 캐주얼 게임 매출의 44%+ <span class="src">(AppMagic)</span></div>
         </div>
       </div>
       <ul class="plain">
@@ -368,6 +371,15 @@
         <li>신규 진입 장벽은 매우 높다. AppMagic에 따르면 2026년 상반기 출시된 신작 매치3 중 월 매출 $10만을 한 번이라도 달성한 비율은 <strong>0.8%</strong>(약 120개 중 1개)에 그쳤다.</li>
         <li>한·미·일 3국의 지형은 상이하다. 미국은 다운로드·매출 모두 퍼즐 강세, 한국은 다운로드 상위를 캐주얼 퍼즐이 점령하되 매출은 MMORPG 중심, 일본은 Puzzle &amp; Dragons 등 자국 퍼즐 RPG가 매출 상위권을 유지한다.</li>
       </ul>
+      <h3>브리핑용 키 넘버</h3>
+      <div class="tiles mini">
+        <div class="tile"><div class="k">신작 매치3 성공률</div><div class="v">0.8%</div><div class="d">월 매출 $10만 달성 비율 <span class="src">(AppMagic H1 2026)</span></div></div>
+        <div class="tile"><div class="k">매치3 반기 매출</div><div class="v">$25억</div><div class="d">퍼즐 전체의 51% <span class="src">(AppMagic H1 2026)</span></div></div>
+        <div class="tile"><div class="k">Royal Kingdom 성장률</div><div class="v">+188%</div><div class="d">매치3 상위 10개 중 1위 <span class="src">(AppMagic)</span></div></div>
+        <div class="tile"><div class="k">Block Blast! 2025 다운로드</div><div class="v">3.56억 회</div><div class="d">전 세계 전체 게임 1위 <span class="src">(AppMagic)</span></div></div>
+        <div class="tile"><div class="k">Arrows 누적 다운로드</div><div class="v">8,000만+</div><div class="d">2025.7 출시 후 약 1년 <span class="src">(2026)</span></div></div>
+        <div class="tile"><div class="k">한국 퍼즐 매출 성장률</div><div class="v">+18%</div><div class="d">하위 장르 중 1위 <span class="src">(Sensor Tower, 2023 리포트)</span></div></div>
+      </div>
       <div class="sowhat">
         <b>So What.</b> 신규 개발 관점의 결론은 06장에 정리했다. 요지는 &lsquo;성숙한 매치3 정면승부 회피,
         성장 중인 정렬·잼(Jam) 계열에서 하이브리드 수익화로 빠른 검증&rsquo;이다.
@@ -483,7 +495,7 @@
       </p>
       <p>
         <strong>③ 화살표(Arrow) 퍼즐의 급부상.</strong> 2026년 6월 Sensor Tower 월간 집계에서
-        Arrows – Puzzle Escape가 글로벌 다운로드 1위에 올랐고, Arrows GO! 등 동일 계열 타이틀이
+        Arrows – Puzzle Escape(독일 Lessmore UG, 2025년 7월 출시)가 글로벌 다운로드 1위에 올랐고, Arrows GO! 등 동일 계열 타이틀이
         다운로드 TOP 10에 동반 진입했다. 하이브리드 캐주얼 퍼즐 전반은 상반기 약 $6억 매출을 기록했으며,
         Rollic Games(Zynga 산하)는 Screwdom(누적 $2,700만+), Color Block Jam 등 다수의 흥행작을 배출했다.
       </p>
@@ -514,10 +526,12 @@
         한국 모바일 게임 시장은 2025년 약 <strong>$53억</strong> 규모로 중국·일본·미국에 이은 세계 4위다.
         매출 상위는 MMORPG·전략 등 하드코어 장르가 장악하고, 다운로드 상위는 캐주얼 퍼즐·정렬 게임이
         점령하는 <strong>이중 구조</strong>가 가장 뚜렷한 시장이다.
-        퍼즐 장르만 보면 Sensor Tower 집계 기준 최근 12개월 매출 <strong>$2.4억, 전년 대비 +18%</strong>로
-        하위 장르 중 가장 높은 성장률을 기록했고, 한국 전체 게임 다운로드의 23%, 매출의 7.5%를 차지해
-        양쪽 모두 역대 최고 점유율에 도달했다. 성장의 중심에는 매출·다운로드 양쪽 1위에 오른
-        Royal Match(한국 누적 매출 약 $4,600만)가 있다.
+        퍼즐 장르만 보면 Sensor Tower의 2023년 11월 발행 리포트 기준 직전 12개월 매출
+        <strong>$2.4억, 전년 대비 +18%</strong>로 하위 장르 중 가장 높은 성장률을 기록했고,
+        같은 리포트 시리즈에서 한국 전체 게임 다운로드의 23%, 매출의 7.5%를 차지하며 역대 최고
+        점유율에 도달한 것으로 집계됐다. 당시 성장의 중심에는 매출·다운로드 양쪽 1위에 오른
+        Royal Match(2023년 기준 한국 누적 매출 약 $4,600만)가 있었고, 이 구도는 2026년 현재까지
+        Royal Match의 글로벌 매출 상위권 유지로 이어지고 있다.
       </p>
       <div class="tbl-scroll">
         <table>
@@ -558,15 +572,15 @@
           <caption>한국 — 주요 퍼즐 타이틀 (공개 집계 종합)</caption>
           <thead><tr><th>순위</th><th>게임</th><th>장르</th><th>개발사</th><th>확인 지표 (기간·출처)</th><th>강점 (분석)</th></tr></thead>
           <tbody>
-            <tr><td class="num">1</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.dreamgames.royalmatch" target="_blank" rel="noopener">로얄 매치</a></td><td><span class="genre-chip">매치3</span></td><td>Dream Games</td><td class="metric">한국 퍼즐 <b>매출·다운로드 동시 1위</b> · 한국 누적 매출 약 <b>$4,600만</b> (Sensor Tower 12개월 집계)</td><td class="metric">한국 퍼즐 매출 +18% 성장을 견인한 매치3</td></tr>
+            <tr><td class="num">1</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.dreamgames.royalmatch" target="_blank" rel="noopener">로얄 매치</a></td><td><span class="genre-chip">매치3</span></td><td>Dream Games</td><td class="metric">한국 퍼즐 <b>매출·다운로드 동시 1위</b> · 한국 누적 매출 약 <b>$4,600만</b> (Sensor Tower, 2023.11 발행 리포트)</td><td class="metric">한국 퍼즐 매출 +18% 성장을 견인한 매치3</td></tr>
             <tr><td class="num">2</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.block.juggle" target="_blank" rel="noopener">Block Blast!</a></td><td><span class="genre-chip">블록</span></td><td>Hungry Studio</td><td class="metric">2026년 한국 <b>다운로드 1위</b> (AppMagic/Udonis)</td><td class="metric">무설명 플레이가 가능한 직관 루프, 전 연령 커버</td></tr>
             <tr><td class="num">3</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.king.candycrushsaga" target="_blank" rel="noopener">캔디크러쉬사가</a></td><td><span class="genre-chip">매치3</span></td><td>King</td><td class="metric">글로벌 2025 IAP <b>$11억+</b> · 전 세계 매출 상시 상위권</td><td class="metric">최장수 글로벌 매치3 브랜드</td></tr>
-            <tr><td class="num">4</td><td class="game"><a href="https://play.google.com/store/search?q=%EC%95%A0%EB%8B%88%ED%8C%A12&c=apps" target="_blank" rel="noopener">애니팡 시리즈 (2·3·4)</a></td><td><span class="genre-chip">매치3</span></td><td>위메이드플레이</td><td class="metric">운영사 2025년 3분기 매출 <b>311억 원</b>(전년比 +7%, 3분기 연속 흑자) · Sensor Tower 한국 퍼즐 리포트에 &lsquo;꾸준한 성과&rsquo; 명시</td><td class="metric">국민 퍼즐 IP, 소셜 그래프 기반 장기 운영</td></tr>
+            <tr><td class="num">4</td><td class="game"><a href="https://play.google.com/store/search?q=%EC%95%A0%EB%8B%88%ED%8C%A12&c=apps" target="_blank" rel="noopener">애니팡 시리즈 (2·3·4)</a></td><td><span class="genre-chip">매치3</span></td><td>위메이드플레이</td><td class="metric">운영사 2025년 3분기 매출 <b>311억 원</b>(전년比 +7%) · 영업이익 34억 원 흑자 전환 · Sensor Tower 한국 퍼즐 리포트에 &lsquo;꾸준한 성과&rsquo; 명시</td><td class="metric">국민 퍼즐 IP, 소셜 그래프 기반 장기 운영</td></tr>
             <tr><td class="num">5</td><td class="game"><a href="https://play.google.com/store/search?q=%ED%94%84%EB%A0%8C%EC%A6%88%ED%8C%9D%EC%BD%98&c=apps" target="_blank" rel="noopener">프렌즈팝콘</a></td><td><span class="genre-chip">매치3</span></td><td>카카오게임즈</td><td class="metric">Sensor Tower 한국 퍼즐 리포트에서 국내 대표 성과작으로 명시</td><td class="metric">카카오프렌즈 IP 결합형 로컬 매치3</td></tr>
-            <tr><td class="num">6</td><td class="game"><a href="https://play.google.com/store/search?q=%EC%95%A0%EB%8B%88%ED%8C%A1%20%EB%A8%B8%EC%A7%80&c=apps" target="_blank" rel="noopener">애니팡 머지</a></td><td><span class="genre-chip">머지</span></td><td>위메이드플레이</td><td class="metric">2025년 9월 구글 플레이 <b>인기 1위</b></td><td class="metric">로컬 IP × 글로벌 성장 장르(머지) 결합 사례</td></tr>
+            <tr><td class="num">6</td><td class="game"><a href="https://play.google.com/store/search?q=%EC%95%A0%EB%8B%88%ED%8C%A1%20%EB%A8%B8%EC%A7%80&c=apps" target="_blank" rel="noopener">애니팡 머지</a></td><td><span class="genre-chip">머지</span></td><td>위메이드플레이</td><td class="metric">2024년 9월 출시 직후 국내 구글 플레이 <b>인기 1위</b></td><td class="metric">로컬 IP × 글로벌 성장 장르(머지) 결합 사례</td></tr>
             <tr><td class="num">7</td><td class="game"><a href="https://apps.apple.com/kr/app/id6473825939" target="_blank" rel="noopener">애니팡 매치라이크</a></td><td><span class="genre-chip">매치3+로그라이크</span></td><td>위메이드플레이</td><td class="metric">2024년 9월 구글 플레이 <b>인기 1위</b></td><td class="metric">매치3 × 로그라이크 빌드의 하이브리드 실험</td></tr>
             <tr><td class="num">8</td><td class="game"><a href="https://play.google.com/store/search?q=Gossip%20Harbor&c=apps" target="_blank" rel="noopener">Gossip Harbor</a></td><td><span class="genre-chip">머지</span></td><td>Microfun</td><td class="metric">글로벌 2025 <b>$6.5억+</b> · 머지 장르 성장(+74%) 주도</td><td class="metric">스토리 결합 머지의 글로벌 표준</td></tr>
-            <tr><td class="num">9</td><td class="game"><a href="https://play.google.com/store/search?q=Arrows%20Puzzle%20Escape&c=apps" target="_blank" rel="noopener">Arrows – Puzzle Escape</a></td><td><span class="genre-chip">화살표·잼</span></td><td>—</td><td class="metric">2026년 6월 <b>글로벌 다운로드 1위</b> (Sensor Tower)</td><td class="metric">2026년 다운로드 차트를 재편 중인 신흥 계열 선두</td></tr>
+            <tr><td class="num">9</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.ecffri.arrows" target="_blank" rel="noopener">Arrows – Puzzle Escape</a></td><td><span class="genre-chip">화살표·잼</span></td><td>Lessmore UG</td><td class="metric">2026년 6월 <b>글로벌 다운로드 1위</b> · 누적 8,000만+ (Sensor Tower 외)</td><td class="metric">2026년 다운로드 차트를 재편 중인 신흥 계열 선두</td></tr>
           </tbody>
         </table>
       </div>
@@ -614,7 +628,7 @@
 
       <h3>미국 퍼즐 게임 TOP 리스트</h3>
       <p class="note">
-        1~3위는 Similarweb의 미국 iOS 퍼즐 매출 차트(2026.6.6 집계) 순서를 따르며, 이하는 공개 집계를 조합한
+        1~3위는 Similarweb 애플 앱스토어 퍼즐 매출 차트(2026년 6월 집계) 순서를 따르며, 이하는 공개 집계를 조합한
         종합 정렬이다. 실시간 순위는 하단 차트 링크에서 확인을 권장한다.
       </p>
       <div class="tbl-scroll">
@@ -622,9 +636,9 @@
           <caption>미국 — 주요 퍼즐 타이틀 (공개 집계 종합)</caption>
           <thead><tr><th>순위</th><th>게임</th><th>장르</th><th>개발사</th><th>확인 지표 (기간·출처)</th><th>강점 (분석)</th></tr></thead>
           <tbody>
-            <tr><td class="num">1</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.dreamgames.royalmatch" target="_blank" rel="noopener">Royal Match</a></td><td><span class="genre-chip">매치3</span></td><td>Dream Games</td><td class="metric">미국 iOS 퍼즐 <b>매출 1위</b> (Similarweb 2026.6) · 미국 주간 매출 최고 <b>$1,590만</b> (Sensor Tower 2025 Q2)</td><td class="metric">미국이 최대 시장, 이벤트 캘린더 물량전의 정점</td></tr>
-            <tr><td class="num">2</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.king.candycrushsaga" target="_blank" rel="noopener">Candy Crush Saga</a></td><td><span class="genre-chip">매치3</span></td><td>King</td><td class="metric">미국 iOS 퍼즐 <b>매출 2위</b> (Similarweb 2026.6) · 2025.8 월 매출 약 $9,000만</td><td class="metric">서구 매치3 결제 습관을 만든 원조 IP</td></tr>
-            <tr><td class="num">3</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.playrix.township" target="_blank" rel="noopener">Township</a></td><td><span class="genre-chip">매치·경영</span></td><td>Playrix</td><td class="metric">미국 iOS 퍼즐 <b>매출 3위</b> (Similarweb 2026.6) · 2025 상반기 $2.44억 · 누적 $20억+</td><td class="metric">퍼즐+농장 경영 하이브리드의 스테디셀러</td></tr>
+            <tr><td class="num">1</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.dreamgames.royalmatch" target="_blank" rel="noopener">Royal Match</a></td><td><span class="genre-chip">매치3</span></td><td>Dream Games</td><td class="metric">앱스토어 퍼즐 <b>매출 1위</b> (Similarweb 2026.6) · 미국 주간 매출 최고 <b>$1,590만</b> (Sensor Tower 2025 Q2)</td><td class="metric">미국이 최대 시장, 이벤트 캘린더 물량전의 정점</td></tr>
+            <tr><td class="num">2</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.king.candycrushsaga" target="_blank" rel="noopener">Candy Crush Saga</a></td><td><span class="genre-chip">매치3</span></td><td>King</td><td class="metric">앱스토어 퍼즐 <b>매출 2위</b> (Similarweb 2026.6) · 2025.8 월 매출 약 $9,000만</td><td class="metric">서구 매치3 결제 습관을 만든 원조 IP</td></tr>
+            <tr><td class="num">3</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.playrix.township" target="_blank" rel="noopener">Township</a></td><td><span class="genre-chip">매치·경영</span></td><td>Playrix</td><td class="metric">앱스토어 퍼즐 <b>매출 3위</b> (Similarweb 2026.6) · 2025 상반기 $2.44억 · 누적 $20억+</td><td class="metric">퍼즐+농장 경영 하이브리드의 스테디셀러</td></tr>
             <tr><td class="num">4</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.block.juggle" target="_blank" rel="noopener">Block Blast!</a></td><td><span class="genre-chip">블록</span></td><td>Hungry Studio</td><td class="metric">2025년 미국 전체 게임 <b>다운로드 1위</b> — 2위 Roblox보다 1,000만+ 많음 (AppMagic)</td><td class="metric">미국 다운로드 시장의 압도적 1강, 광고 매출 최상위군</td></tr>
             <tr><td class="num">5</td><td class="game"><a href="https://play.google.com/store/search?q=Gossip%20Harbor&c=apps" target="_blank" rel="noopener">Gossip Harbor</a></td><td><span class="genre-chip">머지</span></td><td>Microfun</td><td class="metric">글로벌 2025 <b>$6.5억+</b>, 매출의 중심이 북미·서구권</td><td class="metric">서구 여성 유저 대상 스토리 머지의 대표작</td></tr>
             <tr><td class="num">6</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.playrix.gardenscapes" target="_blank" rel="noopener">Gardenscapes</a></td><td><span class="genre-chip">매치3</span></td><td>Playrix</td><td class="metric">글로벌 2025 <b>$5억+</b></td><td class="metric">꾸미기 메타 원조, 미국 장기 상위권</td></tr>
@@ -632,7 +646,7 @@
             <tr><td class="num">8</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.playrix.homescapes" target="_blank" rel="noopener">Homescapes</a></td><td><span class="genre-chip">매치3</span></td><td>Playrix</td><td class="metric">최상위 퍼즐군 · 완만한 하락 추세 (mobilegamer.biz)</td><td class="metric">리모델링 메타 매치3의 대표</td></tr>
             <tr><td class="num">9</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.playrix.fishdomdd.gplay" target="_blank" rel="noopener">Fishdom</a></td><td><span class="genre-chip">매치3</span></td><td>Playrix</td><td class="metric">누적 <b>$20억+</b></td><td class="metric">테마 차별화(아쿠아리움)로 장수</td></tr>
             <tr><td class="num">10</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.peoplefun.wordcross" target="_blank" rel="noopener">Wordscapes</a></td><td><span class="genre-chip">워드</span></td><td>PeopleFun</td><td class="metric">미국 워드 퍼즐 장기 상위권</td><td class="metric">영어권 특화 장르의 스테디셀러</td></tr>
-            <tr><td class="num">11</td><td class="game"><a href="https://play.google.com/store/search?q=Arrows%20Puzzle%20Escape&c=apps" target="_blank" rel="noopener">Arrows – Puzzle Escape</a></td><td><span class="genre-chip">화살표·잼</span></td><td>—</td><td class="metric">2026.6 <b>글로벌 다운로드 1위</b>, 미국 무료 차트 상위 주도 (Sensor Tower)</td><td class="metric">2026년 미국 다운로드 차트의 신흥 변수</td></tr>
+            <tr><td class="num">11</td><td class="game"><a href="https://play.google.com/store/apps/details?id=com.ecffri.arrows" target="_blank" rel="noopener">Arrows – Puzzle Escape</a></td><td><span class="genre-chip">화살표·잼</span></td><td>Lessmore UG</td><td class="metric">2026.6 <b>글로벌 다운로드 1위</b>, 미국 무료 차트 상위 주도 (Sensor Tower)</td><td class="metric">2026년 미국 다운로드 차트의 신흥 변수</td></tr>
             <tr><td class="num">12</td><td class="game"><a href="https://play.google.com/store/search?q=Match%20Factory&c=apps" target="_blank" rel="noopener">Match Factory!</a></td><td><span class="genre-chip">3D 매치</span></td><td>Peak (Zynga)</td><td class="metric">3D 매치 계열 상위권 안착</td><td class="metric">매치3 이탈 유저를 받는 대안 장르 대표</td></tr>
           </tbody>
         </table>
@@ -846,12 +860,12 @@
         </div>
         <div class="pcard">
           <div class="p-top">
-            <div><h4>Block Blast!</h4><div class="dev">Hungry Studio (중국) · 2022</div></div>
+            <div><h4>Block Blast!</h4><div class="dev">Hungry Studio (홍콩, 2021 설립) · 2022</div></div>
             <span class="p-tag">다운로드 1위</span>
           </div>
           <dl>
             <dt>2025년 다운로드</dt><dd>약 3.56억 건 (전체 게임 세계 1위)</dd>
-            <dt>활성 유저</dt><dd>DAU 7,000만 · MAU 3억 (개발사 발표)</dd>
+            <dt>활성 유저</dt><dd>DAU 7,000만 · MAU 3억 (개발사 발표, 2025.12 기준)</dd>
             <dt>수익 모델</dt><dd>광고 중심 (무과금 플레이 완결형)</dd>
           </dl>
           <div class="why"><b>주목 포인트.</b> 튜토리얼조차 불필요한 직관적 &lsquo;드래그-매치-클리어&rsquo; 루프와
@@ -872,12 +886,12 @@
         </div>
         <div class="pcard">
           <div class="p-top">
-            <div><h4>Arrows – Puzzle Escape</h4><div class="dev">2025 출시 · 하이브리드 캐주얼</div></div>
+            <div><h4>Arrows – Puzzle Escape</h4><div class="dev">Lessmore UG (독일) · 2025. 7</div></div>
             <span class="p-tag">2026 신흥 강자</span>
           </div>
           <dl>
             <dt>2026년 6월</dt><dd>글로벌 다운로드 1위 (Block Blast! 추월)</dd>
-            <dt>계열 동반 성장</dt><dd>Arrows GO! 등 유사작 다운로드 TOP 10 동반 진입</dd>
+            <dt>누적 다운로드</dt><dd><b>8,000만+</b> (출시 약 1년) · Arrows GO! 등 유사작 TOP 10 동반 진입</dd>
             <dt>수익 모델</dt><dd>광고 + IAP 하이브리드</dd>
           </dl>
           <div class="why"><b>주목 포인트.</b> &lsquo;화살표 방향으로 빼내기&rsquo;라는 한 줄 설명이 가능한 규칙과
@@ -994,6 +1008,11 @@
           <span class="log-vol">Vol.1.1</span>
           <span class="log-desc">심화 개정 — 글로벌 매출 TOP 리스트, 한·미·일 국가별 퍼즐 TOP 리스트(지표·강점·마켓 링크), 실시간 차트 링크, 심층 프로필 2종(Royal Kingdom·Tsum Tsum) 추가</span>
         </div>
+        <div class="log-item">
+          <span class="log-date">2026. 08. 04</span>
+          <span class="log-vol">Vol.1.2</span>
+          <span class="log-desc">팩트체크 개정 — 한국 Sensor Tower 수치 집계 시점(2023.11) 명시, 애니팡 머지 인기 1위 시점 2024.9로 정정, Arrows 개발사(Lessmore UG·독일)·출시일(2025.7)·누적 8,000만 DL 보강, Hungry Studio 소재지(홍콩) 정정, 브리핑용 키 넘버 추가</span>
+        </div>
       </div>
       <p class="note">추가 예정: Vol.2 — 정렬·잼 계열 상위 타이틀 분해 리서치 (일정 미정)</p>
     </section>
@@ -1022,9 +1041,10 @@
         <li>Similarweb — <a href="https://www.similarweb.com/top-apps/apple/games/puzzle/top-grossing/ipad/" target="_blank" rel="noopener">Top Grossing Puzzle Apps Ranking (2026.6)</a></li>
         <li>국내 보도 — <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=53205" target="_blank" rel="noopener">게임뷰: 위메이드플레이 3Q 매출 311억 원</a> · <a href="https://www.youthdaily.co.kr/news/article.html?no=165970" target="_blank" rel="noopener">청년일보: 애니팡 머지 인기 1위</a> · <a href="https://www.newsis.com/view/NISX20240906_0002878497" target="_blank" rel="noopener">뉴시스: 애니팡 매치라이크 구글 인기 1위</a></li>
         <li>gamebiz — <a href="https://gamebiz.jp/news/262215" target="_blank" rel="noopener">ぷよぷよ!!クエスト 컬래버 순위 급상승</a></li>
+        <li>추가 검증 — <a href="https://zdnet.co.kr/view/?no=20251111163819" target="_blank" rel="noopener">ZDNet Korea: 위메이드플레이 2025 3분기 실적</a> · <a href="https://www.newsis.com/view/NISX20240910_0002882667" target="_blank" rel="noopener">뉴시스: 애니팡 머지 출시(2024.9)</a> · <a href="https://www.gametoc.co.kr/news/articleView.html?idxno=84597" target="_blank" rel="noopener">게임톡: 애니팡 머지 구글 인기 1위(2024.9)</a> · <a href="https://www.capermint.com/blog/develop-game-like-arrows-puzzle-escape/" target="_blank" rel="noopener">Capermint: Arrows – Puzzle Escape 분석 (Lessmore UG)</a> · <a href="https://tracxn.com/d/companies/hungry-studio/__WdaLeX_uPAGLKMIzvEGU5SfLZQLdfHGlWFNUObr1Nig" target="_blank" rel="noopener">Tracxn: Hungry Studio 기업 정보</a></li>
       </ol>
       <p class="note">
-        방법론: 2026년 8월 3일 기준 공개 웹 자료를 교차 확인해 작성. 매출·다운로드 수치는 각 데이터 기업의 추정치이며,
+        방법론: 2026년 8월 3~4일 공개 웹 자료를 교차 확인해 작성(팩트체크 개정 8월 4일). 매출·다운로드 수치는 각 데이터 기업의 추정치이며,
         환율·집계 방식 차이로 실제와 다를 수 있음. 대표작 선정은 각 하위 장르의 매출·다운로드 실적 및 업계 인지도 기준.
         05장 &lsquo;주목 포인트&rsquo;와 06장 &lsquo;판단·제언&rsquo;은 상기 팩트에 근거한 리포트 작성자의 해석임을 명시한다.
       </p>
